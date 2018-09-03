@@ -1,0 +1,16 @@
+--- a/ap.c
++++ b/ap.c
+@@ -4026,10 +4026,11 @@ static int cmd_ap_config_commit(struct s
+ 			fprintf(f, "ieee80211d=1\n");
+ 			fprintf(f, "ieee80211h=1\n");
+ 		}
+-		else if(dut->ap_channel >= 52 && dut->ap_channel <=144) {
++		else if (dut->ap_channel >= 52 && dut->ap_channel <= 144) {
+ 				fprintf(f, "country_code=US\n"
+ 					"ieee80211d=1\n"
+-					"ieee80211h=1\n");
++					"ieee80211h=1\n"
++					"dfs_test_mode=1\n");
+ 		}
+ 	}
+ 

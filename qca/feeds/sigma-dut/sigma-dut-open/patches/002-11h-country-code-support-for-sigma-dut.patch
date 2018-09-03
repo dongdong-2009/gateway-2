@@ -1,0 +1,16 @@
+diff --git a/ap.c b/ap.c
+index 7015aa5..2e8d732 100644
+--- a/ap.c
++++ b/ap.c
+@@ -2977,6 +2977,11 @@ static int cmd_ap_config_commit(struct sigma_dut *dut, struct sigma_conn *conn,
+ 			fprintf(f, "ieee80211d=1\n");
+ 			fprintf(f, "ieee80211h=1\n");
+ 		}
++		else if(dut->ap_channel >= 52 && dut->ap_channel <=144) {
++				fprintf(f, "country_code=US\n"
++					"ieee80211d=1\n"
++					"ieee80211h=1\n");
++		}
+ 	}
+ 
+ 	if (drv == DRIVER_ATHEROS && if_nametoindex(ifname) == 0) {

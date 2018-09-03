@@ -1,0 +1,73 @@
+#!/bin/sh /etc/rc.common
+. /lib/ar71xx.sh
+
+START=63
+
+bt_up(){
+  hciconfig hci0 up
+
+  count=5
+  while [ $count -gt 0 ]
+  do
+    if hciconfig hci0 lestates >/dev/null; then
+      break;
+    fi
+    let count=$count-1
+    sleep 1
+  done
+
+  if [ $count -eq 0 ];then
+    echo "Failed to enable hci0" >> /tmp/log/bccmd
+  fi
+}
+
+set_bt_address() {
+  art=$(grep -i "art" /proc/mtd | cut -d ":" -f 1)
+  bt_addr=$(hexdump /dev/$art -n 6 -s 64 | cut -d " " -f2-4 | sed 's/ //g'| head -n 1)
+  Byte01=${bt_addr:0:2}
+  Byte02=${bt_addr:2:2}
+  Byte03=${bt_addr:4:2}
+  Byte04=${bt_addr:6:2}
+  Byte05=${bt_addr:8:2}
+  Byte06=${bt_addr:10:2}
+
+  bccmd -t hci -d hci0 psset 0x01 0x$Byte04 0x00 0x$Byte06 0x$Byte05 0x$Byte03 0x00 0x$Byte02 0x$Byte01
+}
+
+set_xtal_trim_value() {
+  art=$(grep -i "art" /proc/mtd | cut -d ":" -f 1)
+  trim=$(hexdump /dev/$art -n 7 -s 64 | cut -d " " -f5 | head -n 1)
+  Byte01=${trim:0:2}
+
+  bccmd -t hci -d hci0 psset 0x01f6 0x$Byte01
+}
+
+adjust_ble_conn_interval(){
+  echo 16 > /sys/kernel/debug/bluetooth/hci0/conn_min_interval
+  echo 16 > /sys/kernel/debug/bluetooth/hci0/conn_max_interval
+}
+
+bccmd_init_csr8x11() {
+  bt_up
+  bccmd -t hci -d hci0 psload /etc/bluetooth/csr8x11-a12-bt4.2-patch.psr
+  bccmd -t hci -d hci0 psload /etc/bluetooth/csr8x11-coex.psr
+  set_bt_address
+  set_xtal_trim_value
+  bccmd -t hci -d hci0 warmreset
+  bt_up
+
+  adjust_ble_conn_interval
+}
+
+start() {
+  board_name=$(ar71xx_board_name)
+
+  case "$board_name" in
+  cus531mp3|\
+  cus531mp3-dual|\
+  cus531mp3-nand)
+    bccmd_init_csr8x11
+    ;;
+  esac
+}
+

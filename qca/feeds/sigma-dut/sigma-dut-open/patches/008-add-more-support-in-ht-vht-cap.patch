@@ -1,0 +1,65 @@
+--- a/ap.c
++++ b/ap.c
+@@ -845,6 +845,10 @@ static int cmd_ap_set_wireless(struct si
+ 		}
+ 	}
+ 
++	val = get_param(cmd, "MU_TxBF");
++	if (val)
++		dut->ap_mu_txBF = strcasecmp(val, "enable") == 0;
++
+ 	/* UNSUPPORTED: tx_lgi_rate */
+ 
+ 	val = get_param(cmd, "wpsnfc");
+@@ -4871,16 +4875,18 @@ static int cmd_ap_config_commit(struct s
+ 	if ((drv == DRIVER_MAC80211 || drv == DRIVER_QNXNTO ||
+ 	     drv == DRIVER_LINUX_WCN) &&
+ 	    (dut->ap_mode == AP_11ng || dut->ap_mode == AP_11na)) {
++		char ht_caps[60];
++		int len = 0;
+ 		fprintf(f, "ieee80211n=1\n");
+-		fprintf(f, "ht_capab=");
++		fprintf(f, "obss_interval=1\n");
+ 		if (dut->ap_mode == AP_11ng &&
+ 		    (dut->ap_chwidth == AP_40 ||
+ 		     (dut->ap_chwidth == AP_AUTO &&
+ 		      dut->default_11ng_ap_chwidth == AP_40))) {
+ 			if (dut->ap_channel >= 1 && dut->ap_channel <= 7)
+-				fprintf(f, "[HT40+]");
++				len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[HT40+]");
+ 			else if (dut->ap_channel >= 8 && dut->ap_channel <= 11)
+-				fprintf(f, "[HT40-]");
++				len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[HT40-]");
+ 		}
+ 
+ 		/* configure ht_capab based on channel width */
+@@ -4889,15 +4895,15 @@ static int cmd_ap_config_commit(struct s
+ 		     (dut->ap_chwidth == AP_AUTO &&
+ 		      dut->default_11na_ap_chwidth == AP_40))) {
+ 			if (is_ht40plus_chan(dut->ap_channel))
+-				fprintf(f, "[HT40+]");
++				len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[HT40+]");
+ 			else if (is_ht40minus_chan(dut->ap_channel))
+-				fprintf(f, "[HT40-]");
++				len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[HT40-]");
+ 		}
+ 
+-		if (dut->ap_tx_stbc)
+-			fprintf(f, "[TX-STBC]");
++		len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[SHORT-GI-20][SHORT-GI-40]");
++		len += snprintf(ht_caps + len, sizeof(ht_caps) - len, "%s", "[TX-STBC][RX-STBC1]");
++		fprintf(f, "ht_capab=%s\n", ht_caps);
+ 
+-		fprintf(f, "\n");
+ 	}
+ 
+ 	if ((drv == DRIVER_MAC80211 || drv == DRIVER_QNXNTO ||
+@@ -5336,7 +5342,7 @@ static int cmd_ap_config_commit(struct s
+ 				"[SU-BEAMFORMER][SU-BEAMFORMEE][BF-ANTENNA-2][SOUNDING-DIMENSION-2]" : "",
+ 				(dut->ap_ldpc == VALUE_ENABLED) ?
+ 				"[RXLDPC]" : "",
+-				dut->ap_tx_stbc ? "[TX-STBC-2BY1]" : "",
++				dut->ap_tx_stbc ? "[TX-STBC-2BY1][RX-STBC-1]" : "",
+ 				dut->ap_mu_txBF ? "[MU-BEAMFORMER]" : "");
+ 		}
+ 	}
