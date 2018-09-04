@@ -421,6 +421,9 @@ ar71xx_board_detect() {
 	*"CUS531 MP3 nand reference board")
 		name="cus531mp3-nand"
 		;;
+	*"LDS-G104 board")
+                name="lds-g104"
+                ;;
 	*"DB120 reference board")
 		name="db120"
 		;;
