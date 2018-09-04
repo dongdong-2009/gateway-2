@@ -1067,7 +1067,7 @@ mynet_n600_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,64k(devdat
 mynet_rext_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,7808k(firmware),64k(nvram)ro,64k(ART)ro
 zyx_nbg6716_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(env)ro,64k(RFdata)ro,-(nbu);ar934x-nfc:2048k(zyxel_rfsd),2048k(romd),1024k(header),2048k(kernel),-(ubi)
 qihoo_c301_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(devdata),64k(devconf),15744k(firmware),64k(warm_start),64k(action_image_config),64k(radiocfg)ro;spi0.1:15360k(upgrade2),1024k(privatedata)
-lds_g104_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(media),34m@0x0(firmware0) ubi.mtd=root-0 ubi.mtd=media
+#lds_g104_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(media),34m@0x0(firmware0) ubi.mtd=root-0 ubi.mtd=media
 
 
 define Image/BuildKernel
