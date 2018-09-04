@@ -232,6 +232,46 @@ set network.wan6.proto='dhcpv6'
 EOF
 }
 
+ucidef_set_interface_wwan() {
+	local ifname=$1
+
+	uci batch <<EOF
+set network.wwan='interface'
+set network.wwan.proto='dhcp'
+EOF
+
+}
+
+ucidef_set_sys_mode() {
+
+	uci batch <<EOF
+set network.sysmode='sysnet'
+set network.sysmode.opmode='1'
+EOF
+}
+
+ucidef_set_static_route_broadcast() {
+
+	uci batch <<EOF
+add network route 
+set network.@route[0].interface='lan'
+set network.@route[0].target='255.255.255.255'
+set network.@route[0].netmask='255.255.255.255'
+EOF
+uci commit network
+}
+
+ucidef_set_static_route_multicast() {
+
+	uci batch <<EOF
+add network route 
+set network.@route[1].interface='lan'
+set network.@route[1].target='224.0.0.0'
+set network.@route[1].netmask='224.0.0.0'
+EOF
+uci commit network
+}
+
 ucidef_set_interfaces_lan_wan() {
 	local lan_ifname=$1
 	local wan_ifname=$2
