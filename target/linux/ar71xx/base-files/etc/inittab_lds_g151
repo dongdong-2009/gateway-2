@@ -1,0 +1,4 @@
+::sysinit:/etc/init.d/rcS S boot
+::shutdown:/etc/init.d/rcS K shutdown
+::askconsole:/bin/ash -login
+s0:2345:respawn:/usr/sbin/agetty -L -f /media/issue.serial 115200 ttyUSB0 vt100
