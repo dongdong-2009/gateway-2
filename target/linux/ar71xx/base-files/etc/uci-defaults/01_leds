@@ -621,8 +621,15 @@ lds-g104)
 	uci -q set system.@system[-1].hostname='Leedarson'
 	ucidef_set_led_default "power" "power" "lds:green:power" "1"
 	uci -q set system.led_power.trigger='default-on'
-	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"	
+	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"
 	;;
+lds-g151)
+	uci -q set system.@system[-1].hostname='Leedarson'
+	ucidef_set_led_default "power" "power" "lds:green:power" "1"
+	uci -q set system.led_power.trigger='default-on'
+	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"
+	;;
+	
 esac
 
 ucidef_commit_leds

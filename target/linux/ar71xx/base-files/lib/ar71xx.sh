@@ -422,8 +422,11 @@ ar71xx_board_detect() {
 		name="cus531mp3-nand"
 		;;
 	*"LDS-G104 board")
-                name="lds-g104"
-                ;;
+		name="lds-g104"
+		;;
+	*"LDS-G151 board")
+		name="lds-g151"
+		;;
 	*"DB120 reference board")
 		name="db120"
 		;;
