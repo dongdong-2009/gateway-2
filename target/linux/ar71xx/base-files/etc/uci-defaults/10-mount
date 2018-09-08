@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Copyright (C) 2013 OpenWrt.org
+#
+
+. /lib/ar71xx.sh
+
+
+board=$(ar71xx_board_name)
+
+case "$board" in
+lds-g104 | \
+lds-g151)
+	mkdir -p /media
+	mount -t ubifs ubi1_0 /media
+	;;
+esac
