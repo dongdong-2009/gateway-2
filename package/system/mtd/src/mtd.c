@@ -44,6 +44,7 @@
 #include <mtd/mtd-user.h>
 #include "fis.h"
 #include "mtd.h"
+#include "arttool.h"
 
 #include <libubox/md5.h>
 
@@ -639,7 +640,9 @@ static void usage(void)
 	"        erase                   erase all data on device\n"
 	"        verify <imagefile>|-    verify <imagefile> (use - for stdin) to device\n"
 	"        write <imagefile>|-     write <imagefile> (use - for stdin) to device\n"
-	"        jffs2write <file>       append <file> to the jffs2 partition on the device\n");
+	"        jffs2write <file>       append <file> to the jffs2 partition on the device\n"
+	"        set_mac <device> <mac>  write eth0/eth1/radio0/ble0/ble1/plc/r16 mac to art \n"
+	"        get_mac <device>        read eth0/eth1/radio0/ble0/ble1/plc/r16 mac from art \n");
 	if (mtd_resetbc) {
 	    fprintf(stderr,
 	"        resetbc <device>        reset the uboot boot counter\n");
@@ -854,7 +857,10 @@ int main (int argc, char **argv)
 			fprintf(stderr, "Can't open device for writing!\n");
 			exit(1);
 		}
-	} else {
+	}else if (((strcmp(argv[0], "get_mac") == 0) && (argc == 2)) || ((strcmp(argv[0], "set_mac") == 0) && (argc == 3)))
+{
+         return arttool(argv[0], argv[1], argv[2]);
+} else {
 		usage();
 	}
 
