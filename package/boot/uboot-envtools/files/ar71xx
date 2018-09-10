@@ -25,6 +25,8 @@ cus531-nand | \
 cus531mp3 | \
 cus531mp3-dual | \
 cus531mp3-nand | \
+lds-g104 | \
+lds-g151 | \
 eap300v2 | \
 hornet-ub | \
 hornet-ub-x2 | \
