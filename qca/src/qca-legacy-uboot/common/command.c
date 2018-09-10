@@ -27,6 +27,250 @@
 
 #include <common.h>
 #include <command.h>
+//#define GW_ART_OP_FUNCTION
+//#if defined(GW_ART_OP_FUNCTION)
+
+int do_get_eth0_mac(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[])
+{
+	char buf[20] = { 0 };
+	int i = 0;
+	
+	run_command("cp.b 0x9f070000 0x80060000 0x10000", 0);
+	memcpy(buf, 0x80060000, 6);
+	
+	printf("eth mac : ");
+	for(i = 0; i < 6; i++)
+	{
+		printf("%x%x",(buf[i]&0xf0)>>4,buf[i]&0xf);
+	}	
+	printf("\n");
+	
+	return 0;
+}
+U_BOOT_CMD(
+    geteth0mac, 1, 0, do_get_eth0_mac,
+    "geteth0mac - Get eth0 MAC addresses\n",
+    "geteth0mac - Get the eth0 MAC addresses\n"
+    "                aaaa\n"
+    "                bbbb\n"
+    "                cccc\n"
+    "                dddd\n"
+);
+
+
+int do_LdrWifiMacRead(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	char buf[20]={0};
+	int i=0;
+	memcpy(buf,0x80061002,6);
+	printf("wifi mac : ");
+	for(i=0;i<6;i++){
+		printf("%x%x",(buf[i]&0xf0)>>4,buf[i]&0xf);
+	}
+	printf("\n");
+	return 0;
+
+}
+U_BOOT_CMD(readwifimac,1,0,do_LdrWifiMacRead,"readwifimac  \n","-readwifimac: read wifi mac \n");
+
+int do_LdrEthMacRead(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	char buf[20]={0};
+	int i=0;
+	memcpy(buf,0x80060000,6);
+	printf("eth mac : ");
+	for(i=0;i<6;i++){
+		printf("%x%x",(buf[i]&0xf0)>>4,buf[i]&0xf);
+	}
+	printf("\n");
+	return 0;
+
+}
+U_BOOT_CMD(readethmac,1,0,do_LdrEthMacRead,"readethmac  \n","-readethmac: read eth0 mac \n");
+
+int do_LdrEth1MacRead(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	char buf[20]={0};
+	int i=0;
+	memcpy(buf,0x80060006,6);
+	printf("eth1 mac : ");
+	for(i=0;i<6;i++){
+		printf("%x%x",(buf[i]&0xf0)>>4,buf[i]&0xf);
+	}
+	printf("\n");
+	return 0;
+
+}
+U_BOOT_CMD(readeth1mac,1,0,do_LdrEth1MacRead,"readeth1mac  \n","-readeth1mac: read eth1 mac \n");
+
+static int hex2dec(char hex)
+{
+	int dec = -1;
+	
+	if(hex >= '0' && hex <= '9')
+	{
+		dec = hex - '0';
+	}
+	else if(hex >= 'a' && hex <= 'f')
+	{
+		dec = hex - 'a' + 10;
+	}
+	else if(hex >= 'A' && hex <= 'F')
+	{
+		dec = hex - 'A' + 10;
+	}
+	
+	return dec;
+}
+
+int do_set_eth0_mac(cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
+{
+	char *MacDataAddr;
+	MacDataAddr = 0x80060000;  //mac  addr 
+	unsigned char MacAddr[6];
+	char Mac12addr[13];
+	char lowMac;
+	char highMac;
+	
+	if(strlen(argv[1]) != 12)
+	{
+		printf("writemac fail,mac length != 12\n");   
+		return -1;
+	}
+	
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	memcpy(Mac12addr, argv[1], 12);
+	
+	int i;
+	for(i = 0; i < 6; i++)
+	{
+		lowMac = hex2dec(Mac12addr[2*i]);
+		highMac = hex2dec(Mac12addr[2*i+1]);
+		MacAddr[i]=((lowMac&0xf)<<4)|highMac;
+		//printf("MacAddr=%2x \n",MacAddr[i]);
+	}
+	
+	memcpy(MacDataAddr, MacAddr, 6);
+	
+	run_command("erase 0x9f070000 +0x10000", 0);
+	run_command("cp.b 0x80060000 0x9f070000 0x10000", 0);
+	
+	return 0;
+}
+U_BOOT_CMD(
+    seteth0mac, 2, 0, do_set_eth0_mac,
+    "seteth0mac - Set eth0 MAC addresses\n",
+    "seteth0mac - Set the eth0 MAC addresses\n"
+    "                aaaa\n"
+    "                bbbb\n"
+    "                cccc\n"
+    "                dddd\n"
+);
+
+int do_LdrWifiMacWrite(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	char *MacDataAddr;
+	MacDataAddr=0x80061002;  //mac  addr 
+	unsigned char MacAddr[6];
+	char Mac12addr[13];
+	char lowMac;
+	char highMac;
+
+	if( strlen(argv[1]) != 12 ){
+		printf("writemac fail,mac length != 12\n");   
+		return -1;
+	}
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	memcpy(Mac12addr,argv[1],12);
+
+	int i;
+	for(i=0;i<6;i++){
+		lowMac = hex2dec(Mac12addr[2*i]);
+		highMac = hex2dec(Mac12addr[2*i+1]);
+		MacAddr[i]=((lowMac&0xf)<<4)|highMac;
+		//printf("MacAddr=%2x \n",MacAddr[i]);
+	}
+
+	memcpy(MacDataAddr,MacAddr,6);
+
+	run_command("erase 0x9f070000 +0x10000",0);
+	run_command("cp.b 0x80060000 0x9f070000 0x10000",0);
+
+	return 0;
+}
+U_BOOT_CMD(writewifimac,2,0,do_LdrWifiMacWrite,"writewifimac  \n","-writewifimac: write  wifi mac,Usage:writewifimac 010203040506\n");
+
+int do_LdrEthMacWrite(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	char *MacDataAddr;
+	MacDataAddr=0x80060000;  //mac  addr 
+	unsigned char MacAddr[6];
+	char Mac12addr[13];
+	char lowMac;
+	char highMac;
+
+	if( strlen(argv[1]) != 12 ){
+		printf("writemac fail,mac length != 12\n");   
+		return -1;
+	}
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	memcpy(Mac12addr,argv[1],12);
+
+	int i;
+	for(i=0;i<6;i++){
+		lowMac = hex2dec(Mac12addr[2*i]);
+		highMac = hex2dec(Mac12addr[2*i+1]);
+		MacAddr[i]=((lowMac&0xf)<<4)|highMac;
+		//printf("MacAddr=%2x \n",MacAddr[i]);
+	}
+
+	memcpy(MacDataAddr,MacAddr,6);
+
+	run_command("erase 0x9f070000 +0x10000",0);
+	run_command("cp.b 0x80060000 0x9f070000 0x10000",0);
+
+	return 0;
+}
+U_BOOT_CMD(writeethmac,2,0,do_LdrEthMacWrite,"writeethmac  \n","-writeethmac: write  eth0 mac,Usage:writeethmac 010203040506\n");
+
+int do_LdrEth1MacWrite(cmd_tbl_t *cmdtp,int flag,int argc,char *argv[]){
+
+	char *MacDataAddr;
+	MacDataAddr=0x80060006;  //mac  addr 
+	unsigned char MacAddr[6];
+	char Mac12addr[13];
+	char lowMac;
+	char highMac;
+
+	if( strlen(argv[1]) != 12 ){
+		printf("writemac fail,mac length != 12\n");   
+		return -1;
+	}
+	run_command("cp.b 0x9f070000 0x80060000 0x10000",0);
+	memcpy(Mac12addr,argv[1],12);
+
+	int i;
+	for(i=0;i<6;i++){
+		lowMac = hex2dec(Mac12addr[2*i]);
+		highMac = hex2dec(Mac12addr[2*i+1]);
+		MacAddr[i]=((lowMac&0xf)<<4)|highMac;
+		//printf("MacAddr=%2x \n",MacAddr[i]);
+	}
+
+	memcpy(MacDataAddr,MacAddr,6);
+
+	run_command("erase 0x9f070000 +0x10000",0);
+	run_command("cp.b 0x80060000 0x9f070000 0x10000",0);
+
+	return 0;
+}
+U_BOOT_CMD(writeeth1mac,2,0,do_LdrEth1MacWrite,"writeeth1mac  \n","-writeeth1mac: write  eth1 mac,Usage:writeeth1mac 010203040506\n");
+
+
+//#endif
 
 int
 do_version (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
