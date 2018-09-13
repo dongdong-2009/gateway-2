@@ -172,36 +172,7 @@ ioe_update_uboot_env() {
 EOF
 	v "done"
 }
-checkUpgardeStatus()
-{
-	upgrade_img=$1
-	mtd_dev_update=$2
-	reupgrade=3
-	count=1
-	fileSize=`du -hk $upgrade_img | awk '{print $1}'`
-	
-	echo "check upgrade status" > /tmp/upgrade.log
-	#upgrade check
-	while [ $reupgrade -ge 0 ]
-	do
-		echo "image fileSize:$fileSize" >>/tmp/upgrade.log
-		dd bs=1024 count=$fileSize if=$mtd_dev_update of=/tmp/img
-		local fpath=/tmp/img
-		local imgcrc=`/rom/usr/bin/networkAdapter upgrade "$fpath"`
-		local checkFlage=`echo $imgcrc | grep success |wc -l`
 
-		if [ "$checkFlage" != "1" ] ;then 
-			echo "Invalid image type failed num:$count" >>/tmp/upgrade.log
-			mtd erase $mtd_dev_update
-			dd if=$upgrade_img bs=2048 | nandwrite -p $mtd_dev_update -
-
-			count=`expr $count + 1 `
-		else
-			echo "Invalid image:$imgcrc" >>/tmp/upgrade.log
-		fi
-		reupgrade=`expr $reupgrade - 1`
-	done
-}
 platform_do_upgrade_ioe() {
 	local file=$1
 	local name=$2
@@ -234,7 +205,6 @@ platform_do_upgrade_ioe() {
 		mtd erase $mtd_dev
 		mtd_ubi_rootfs="$(cat /proc/mtd |grep $rootfs |cut -f1 -d ":"|grep -Eo '[0-9]+'|head -1)"
 		dd if=$file bs=2048 | nandwrite -p $mtd_dev -
-		checkUpgardeStatus $file $mtd_dev
 		ubiattach -m $mtd_ubi_rootfs -d $ubi_vol $ubi_ctrl_dev
 		sleep 2
 		mtd_ubi_rootfs_data="$(cat /proc/mtd |grep $rootfs_data |cut -f1 -d ":" | awk ' // {sub(/mtd/, "", $0);print("/dev/mtdblock"$0)}')"
