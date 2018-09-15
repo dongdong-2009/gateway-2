@@ -476,6 +476,11 @@ platform_check_image() {
 		platform_check_image_ioe "$1" && return 0
 		return 1
 		;;
+	lds-g104 | \
+	lds-g151)
+		platform_check_image_lds "$1" && return 0
+		return 1
+		;;
 	esac
 
 	echo "Sysupgrade is not yet supported on $board."
@@ -556,6 +561,10 @@ platform_do_upgrade() {
 	cus531mp3-nand | \
 	cus532k)
 		platform_do_upgrade_ioe "$ARGV" "$board"
+		;;
+	lds-g104 | \
+	lds-g151)
+		platform_do_upgrade_lds "$ARGV" "$board"
 		;;
 	*)
 		default_do_upgrade "$ARGV"
