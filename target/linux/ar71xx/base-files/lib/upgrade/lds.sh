@@ -137,8 +137,59 @@ platform_add_ramfs_lds_tools()
 }
 append sysupgrade_pre_upgrade platform_add_ramfs_lds_tools
 
+
+lds_get_target_firmware() 
+{
+	cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
+	target_firmware=""
+	if [ "$cur_boot_part" = "0" ]
+	then
+		# current primary boot - update alt boot
+		target_firmware="firmware1"
+	elif [ "$cur_boot_part" = "1" ]
+	then
+		# current alt boot - update primary boot
+		target_firmware="firmware0"
+	fi
+	
+	echo "$target_firmware"
+}
+
 platform_do_upgrade_lds() 
 {
-	echo "Performing system upgrade..."
+	echo "Performing platform_do_upgrade_lds ..."
 	
+	mkdir -p /var/lock
+	local part_label="$(lds_get_target_firmware)"
+	touch /var/lock/fw_printenv.lock
+	
+	if [ ! -n "$part_label" ]
+	then
+		echo "cannot find target partition"
+		exit 1
+	fi
+	
+	mtd erase $part_label
+	get_image "$1" | mtd -n write - $part_label
+	
+	local STRING=$(mtd verify $1 $part_label 2>&1)
+    local SUBSTRING="Success"
+	if test "${STRING#*$SUBSTRING}" != "$STRING"
+	then
+		echo "mtd verify "$1" $part_label is Success"
+		
+		local cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
+		if [ "$cur_boot_part" = "0" ]
+		then
+			fw_setenv bootslot 1
+		elif [ "$cur_boot_part" = "1" ]
+		then
+			fw_setenv bootslot 0
+		fi
+		
+   else		
+		echo "mtd verify "$1" $part_label is Failed"		
+		
+	fi	
+
 }

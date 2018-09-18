@@ -572,6 +572,21 @@ platform_do_upgrade() {
 	esac
 }
 
+platform_copy_config() {
+	local board=$(ar71xx_board_name)
+	
+	echo "Performing platform_copy_config $board ..."
+	
+	case "$board" in	
+	lds-g104 | \
+	lds-g151)
+		mount -t ubifs ubi1_0 /mnt
+		cp -af "$CONF_TAR" /mnt/
+		umount /mnt
+		;;	
+	esac
+}
+
 disable_watchdog() {
 	killall watchdog
 	( ps | grep -v 'grep' | grep '/dev/watchdog' ) && {
