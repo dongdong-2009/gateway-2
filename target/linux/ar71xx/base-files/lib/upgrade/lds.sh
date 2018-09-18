@@ -12,6 +12,20 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+constant_swap32()
+{
+	local x=0x"$1"
+	
+	local x0=$(( $(( $x & 0xff000000 )) >> 24 ))
+	local x1=$(( $(( $x & 0x00ff0000 )) >> 8  ))
+	local x2=$(( $(( $x & 0x0000ff00 )) << 8  ))
+	local x3=$(( $(( $x & 0x000000ff )) << 24 ))
+	
+	local r=$(( $x0 | $x1 | $x2 | $x3 ))
+	
+	printf "%08x" $r
+}
+
 get_ih_magic() 
 {
 	(get_image "$@" | dd bs=4 count=1 | hexdump -v -n 4 -e '1/1 "%02x"') 2>/dev/null
@@ -29,18 +43,41 @@ ckcrc32_ih_hcrc()
 	get_image "$@" | dd bs=4 skip=2 count=14; ) | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08x"') 2>/dev/null
 }
 
-constant_swap32()
+get_ih_dcrc() 
 {
-	local x=0x"$1"
+	(get_image "$@" | dd bs=4 skip=6 count=1 | hexdump -v -n 4 -e '1/1 "%02x"') 2>/dev/null
+}
+
+get_ih_size() 
+{
+	(get_image "$@" | dd bs=4 skip=3 count=1 | hexdump -v -n 4 -e '1/1 "%02x"') 2>/dev/null
+}
+ckcrc32_ih_dcrc() 
+{
+	local ih_size=0x"$(get_ih_size "$1")"
+	ih_size=$(printf "%d" $ih_size)
 	
-	local x0=$(( $(( $x & 0xff000000 )) >> 24 ))
-	local x1=$(( $(( $x & 0x00ff0000 )) >> 8  ))
-	local x2=$(( $(( $x & 0x0000ff00 )) << 8  ))
-	local x3=$(( $(( $x & 0x000000ff )) << 24 ))
-	
-	local r=$(( $x0 | $x1 | $x2 | $x3 ))
-	
-	printf "%08x" $r
+	(( get_image "$@" | dd bs=1 skip=64 count=$ih_size ) | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08x"') 2>/dev/null
+}
+
+# determine size of the main firmware partition
+platform_get_firmware_size() 
+{
+	local dev size erasesize name
+	while read dev size erasesize name; do
+		name=${name#'"'}; name=${name%'"'}
+		case "$name" in
+			firmware*)
+				printf "%d" "0x$size"
+				break
+			;;
+		esac
+	done < /proc/mtd
+}
+
+get_filesize() 
+{
+	wc -c "$1" | while read image_size _n ; do echo $image_size ; break; done
 }
 
 platform_check_image_lds() 
@@ -49,26 +86,33 @@ platform_check_image_lds()
 	
 	case "$ih_magic" in
 	"27051956")
-		echo "It is linux header magic. " "$ih_magic"
 		
 		local ih_hcrc_n="$(get_ih_hcrc "$1")"
 		local ih_hcrc_h=$(constant_swap32 $ih_hcrc_n)
-		local ih_crc32="$(ckcrc32_ih_hcrc "$1")"
+		local ih_hcrc_ck="$(ckcrc32_ih_hcrc "$1")"
 		
-		echo "ih_hcrc_n: $ih_hcrc_n ih_hcrc_h: $ih_hcrc_h ih_crc32:$ih_crc32"
-		
-		[ "$ih_crc32" != "$ih_hcrc_h" ] && {
-			echo "ih_hcrc mismatch ih_crc32:$ih_crc32 ih_hcrc_h: $ih_hcrc_h"
+		[ "$ih_hcrc_ck" != "$ih_hcrc_h" ] && {
+			echo "ih_hcrc mismatch ih_hcrc_ck:$ih_hcrc_ck ih_hcrc_h:$ih_hcrc_h"
 			return 1
 		}
 		
+		local ih_dcrc_n="$(get_ih_dcrc "$1")"
+		local ih_dcrc_h=$(constant_swap32 $ih_dcrc_n)
+		local ih_dcrc_ck="$(ckcrc32_ih_dcrc "$1")"
 		
+		[ "$ih_dcrc_ck" != "$ih_dcrc_h" ] && {
+			echo "ih_dcrc mismatch ih_dcrc_ck:$ih_dcrc_ck ih_dcrc_h:$ih_dcrc_h"
+			return 1
+		}
 		
+		local image_size=$( get_filesize "$1" )
+		local firmware_size=$( platform_get_firmware_size )
 		
-		;;
-	"43493030")
-		echo "Unsupported. This is a test."
-		return 1
+		[ $image_size -ge $firmware_size ] && {
+			echo "upgrade image is too big (${image_size}B > ${firmware_size}B)"
+			return 1
+		}
+		
 		;;
 	*)
 		echo "Unsupported image format."
