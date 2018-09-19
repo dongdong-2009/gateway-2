@@ -169,10 +169,14 @@ platform_do_upgrade_lds()
 		exit 1
 	fi
 	
-	mtd erase $part_label
-	get_image "$1" | mtd -n write - $part_label
+	GOT_SYSUPGRADE_BIN="/tmp/sysupgrade.bin"
 	
-	local STRING=$(mtd verify $1 $part_label 2>&1)
+	get_image "$1" > $GOT_SYSUPGRADE_BIN
+	
+	mtd erase $part_label
+	mtd -n write $GOT_SYSUPGRADE_BIN $part_label
+	
+	local STRING=$(mtd verify $GOT_SYSUPGRADE_BIN $part_label 2>&1)
     local SUBSTRING="Success"
 	if test "${STRING#*$SUBSTRING}" != "$STRING"
 	then
