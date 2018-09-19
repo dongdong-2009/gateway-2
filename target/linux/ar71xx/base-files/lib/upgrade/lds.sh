@@ -177,10 +177,10 @@ platform_do_upgrade_lds()
 	mtd -n write $GOT_SYSUPGRADE_BIN $part_label
 	
 	local STRING=$(mtd verify $GOT_SYSUPGRADE_BIN $part_label 2>&1)
-    local SUBSTRING="Success"
+	local SUBSTRING="Success"
 	if test "${STRING#*$SUBSTRING}" != "$STRING"
 	then
-		echo "mtd verify "$1" $part_label is Success"
+		echo "To verify mtd is SUCCESS"
 		
 		local cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
 		if [ "$cur_boot_part" = "0" ]
@@ -191,9 +191,8 @@ platform_do_upgrade_lds()
 			fw_setenv bootslot 0
 		fi
 		
-   else		
-		echo "mtd verify "$1" $part_label is Failed"		
-		
+	else
+		echo "To verify mtd is FAILED"
 	fi	
 
 }
