@@ -1,4 +1,10 @@
 #!/bin/sh
+
+. /lib/ar71xx.sh
+
+board=$(ar71xx_board_name)
+
+
 append DRIVERS "mac80211"
 
 lookup_phy() {
@@ -57,6 +63,8 @@ check_mac80211_device() {
 }
 
 detect_mac80211() {
+	
+	
 	devidx=0
 	config_load wireless
 	while :; do
@@ -115,6 +123,88 @@ detect_mac80211() {
 			dev_id="	option macaddr	$(cat /sys/class/ieee80211/${dev}/macaddress)"
 		fi
 
+case "$board" in
+
+lds-g104)
+	
+		cat <<EOF
+config wifi-device  radio$devidx
+	option type     mac80211
+	option channel  auto
+	option hwmode	11${mode_11n}${mode_band}
+$dev_id
+$ht_capab
+	option country 'CN'
+	option disabled 0
+	option txpower  15
+	
+config wifi-iface
+	option device   radio$devidx
+	option network  lan
+	option mode     ap
+	option ssid     Edu-GW-$(cat /sys/class/ieee80211/${dev}/macaddress|awk -F ":" '{print $5""$6 }'| tr a-z A-Z)
+	option encryption 'none'
+	option ifname 'wlan0'
+	option key '12345678'
+	option wps_pushbutton '1'
+	option disabled '0'
+	
+config wifi-iface
+	option device   radio$devidx
+	option encryption 'psk-mixed'
+	option ssid 'Leedarson'
+	option mode 'sta'
+	option ifname 'wlan0-1'
+	option network 'wwan'
+	option disabled '1'
+	option key '12345678'
+	option wps_pushbutton '1'
+	
+EOF
+	
+	;;
+	
+lds-g151)
+	
+		cat <<EOF
+config wifi-device  radio$devidx
+	option type     mac80211
+	option channel  auto
+	option hwmode	11${mode_11n}${mode_band}
+$dev_id
+$ht_capab
+	option country 'CN'
+	option disabled 0
+	option txpower  15
+
+config wifi-iface
+	option device   radio$devidx
+	option network  lan
+	option mode     ap
+	option ssid     Defiant-GW-$(cat /sys/class/ieee80211/${dev}/macaddress|awk -F ":" '{print $5""$6 }'| tr a-z A-Z)
+	option encryption 'none'
+	option ifname 'wlan0'
+	option key '12345678'
+	option wps_pushbutton '1'
+	option disabled '0'
+
+config wifi-iface
+	option device   radio$devidx
+	option encryption 'psk-mixed'
+	option ssid 'Leedarson'
+	option mode 'sta'
+	option ifname 'wlan0-1'
+	option network 'wwan'
+	option disabled '1'
+	option key '12345678'
+	option wps_pushbutton '1'
+	
+EOF
+	
+	;;
+	
+*)
+	
 		cat <<EOF
 config wifi-device  radio$devidx
 	option type     mac80211
@@ -133,6 +223,12 @@ config wifi-iface
 	option encryption none
 
 EOF
+	
+	;;
+	
+esac
+	
+	
 	devidx=$(($devidx + 1))
 	done
 }
