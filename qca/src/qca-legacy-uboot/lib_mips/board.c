@@ -466,6 +466,14 @@ void board_init_r (gd_t *id, ulong dest_addr)
 
         ath_set_tuning_caps(); /* Needed here not to mess with Ethernet clocks */
 
+#ifdef BOARD_LDS_G104
+	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
+#elif  BOARD_LDS_G151
+	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
+#else
+	/* NOTHING */
+#endif
+
 	/* main_loop() can return to retry autoboot, if so just run it again. */
 	for (;;) {
 		main_loop ();
