@@ -180,7 +180,7 @@ platform_do_upgrade_lds()
 	local SUBSTRING="Success"
 	if test "${STRING#*$SUBSTRING}" != "$STRING"
 	then
-		echo "To verify mtd is SUCCESS"
+		echo "Verifying mtd is SUCCESS"
 		
 		local cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
 		if [ "$cur_boot_part" = "0" ]
@@ -192,7 +192,7 @@ platform_do_upgrade_lds()
 		fi
 		
 	else
-		echo "To verify mtd is FAILED"
+		echo "Verifying mtd is FAILED"
 	fi	
 
 }
