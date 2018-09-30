@@ -1289,7 +1289,19 @@ define Image/Build/IoENAND
 	( \
 		dd if=$(call imgname,kernel,$(2)).bin bs=$(7) conv=sync; \
 		dd if=$(call imgname,$(1),$(2)-rootfs).ubi \
-	) > $(call sysupname,$(1),$(2))
+	) > $(call sysupname,$(1),$(2))	
+	
+	# add by nick from leedarson
+	TOPDIR=$(TOPDIR) \
+	VERSION_NUMBER=$(VERSION_NUMBER) \
+	REVISION=$(REVISION) \
+	BOARD_NAME=$(2) \
+	BIN_UBOOT=$(BIN_DIR)/openwrt-$(BOARD)-$(2)-qca-legacy-uboot.bin \
+	BIN_KERNEL=$(call imgname,kernel,$(2)).bin \
+	BIN_ROOTFS=$(call imgname,$(1),$(2)-rootfs).ubi \
+	BIN_SYSUPGRADE=$(call sysupname,$(1),$(2)) \
+		$(TOPDIR)/scripts/lds-fw.sh 
+	
 endef
 
 Image/Build/IoENAND/buildkernel=$(call MkuImageLzma,$(2),$(3) $(4))
