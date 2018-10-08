@@ -44,20 +44,22 @@ TARGET_SYSUPGRADE=""
 
 case "$BOARD_NAME" in
 lds-g104) # 教育照明
+	
+	REVISION=`echo ${REVISION} | tr '[:lower:]' '[:upper:]'`
 	IMG_PREFIX="Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-${REVISION}-V${VERSION_NUMBER}"
-	TARGET_UBOOT=${TOPDIR}/versions/${IMG_PREFIX}-u-boot.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/versions/${IMG_PREFIX}-uboot_art.flash
-	TARGET_KERNEL=${TOPDIR}/versions/${IMG_PREFIX}-kernel.bin
-	TARGET_ROOTFS=${TOPDIR}/versions/${IMG_PREFIX}-rootfs.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/versions/${IMG_PREFIX}-sysupgrade.bin
+	TARGET_UBOOT=${TOPDIR}/release/${IMG_PREFIX}-u-boot.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/${IMG_PREFIX}-uboot_art.flash
+	TARGET_KERNEL=${TOPDIR}/release/${IMG_PREFIX}-kernel.bin
+	TARGET_ROOTFS=${TOPDIR}/release/${IMG_PREFIX}-rootfs.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/${IMG_PREFIX}-sysupgrade.bin
 	;;
 	
 lds-g151) # A023 Siren Hub
-	TARGET_UBOOT=${TOPDIR}/versions/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/versions/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
-	TARGET_KERNEL=${TOPDIR}/versions/"Gateway_Host_Kernel_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_ROOTFS=${TOPDIR}/versions/"Gateway_Host_Rootfs_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/versions/"Gateway_Host_Sysupgrade_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
 	;;
 	
 lds-g152) # 自主Siren Hub
@@ -86,8 +88,8 @@ EOF
 
 gen_firmware()
 {
-	rm  -rf ${TOPDIR}/versions >> /dev/null
-	mkdir -p ${TOPDIR}/versions
+	rm  -rf ${TOPDIR}/release >> /dev/null
+	mkdir -p ${TOPDIR}/release
 	
 	echo TARGET_UBOOT: ${TARGET_UBOOT}
 	echo TARGET_UBOOT_FLASH: ${TARGET_UBOOT_FLASH}
