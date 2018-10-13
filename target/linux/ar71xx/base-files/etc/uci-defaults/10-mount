@@ -11,7 +11,8 @@ board=$(ar71xx_board_name)
 case "$board" in
 lds-g104 | \
 lds-g402 | \
-lds-g151)
+lds-g151 | \
+lds-g152)
 	mkdir -p /media
 	mount -t ubifs ubi1_0 /media
 	;;

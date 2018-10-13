@@ -494,6 +494,17 @@ lds-g151)
 	ucidef_set_sys_mode
 	;;
 
+lds-g152)
+	ucidef_set_interfaces_lan_wan "eth1" "eth0"
+	uci set network.lan.ipaddr='192.168.10.1'
+	uci -q set network.wan.hostname='Leedarson'
+	uci -q set network.wan6.hostname='Leedarson'
+	ucidef_add_switch "switch0" "1" "1"
+	ucidef_add_switch_vlan "switch0" "1" "0 1 2 3 4"
+	ucidef_set_interface_wwan "wwan"
+	ucidef_set_sys_mode
+	;;
+
 wzr-hp-g450h)
 	ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
 	ucidef_add_switch "switch0" "1" "1"

@@ -430,6 +430,9 @@ ar71xx_board_detect() {
 	*"LDS-G151 board")
 		name="lds-g151"
 		;;
+	*"LDS-G152 board")
+		name="lds-g152"
+		;;
 	*"DB120 reference board")
 		name="db120"
 		;;

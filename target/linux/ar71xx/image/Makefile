@@ -1070,7 +1070,7 @@ qihoo_c301_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(devdata)
 #lds_g104_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)
 #lds_g402_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)
 #lds_g151_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)
-
+#lds_g152_mtdlayout=mtdparts=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)
 
 define Image/BuildKernel
 	cp $(KDIR)/vmlinux.elf $(VMLINUX).elf
@@ -2006,6 +2006,7 @@ $(eval $(call SingleProfile,IoENAND,64k,CUS531MP3NAND,cus531MP3nand,CUS531MP3-NA
 $(eval $(call SingleProfile,IoENAND,64k,LDS_G104,lds-g104,LDS-G104,ttyS0,115200,$$(lds_g104_mtdlayout),KRuImage,LDS-G104,2097152))
 $(eval $(call SingleProfile,IoENAND,64k,LDS_G402,lds-g402,LDS-G402,ttyS0,115200,$$(lds_g402_mtdlayout),KRuImage,LDS-G402,2097152))
 $(eval $(call SingleProfile,IoENAND,64k,LDS_G151,lds-g151,LDS-G151,ttyUSB0,115200,$$(lds_g151_mtdlayout),KRuImage,LDS-G151,2097152))
+$(eval $(call SingleProfile,IoENAND,64k,LDS_G152,lds-g152,LDS-G152,ttyUSB0,115200,$$(lds_g152_mtdlayout),KRuImage,LDS-G152,2097152))
 $(eval $(call SingleProfile,IoENAND,64k,CUS531MP3NAND_DUAL,cus531MP3nand-dual,CUS531MP3-NAND,ttyS0,115200,,KRuImage,CUS531MP3-NAND,2097152))
 $(eval $(call SingleProfile,IoENAND,64k,CUS532K,cus532k,CUS532K,ttyS0,115200,,KRuImage,CUS532K,2097152))
 $(eval $(call SingleProfile,AthLzma,64k,DB120,db120,DB120,ttyS0,115200,$$(db120_mtdlayout),RKuImage))
