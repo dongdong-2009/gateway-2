@@ -411,6 +411,8 @@
 
 #ifdef BOARD_LDS_G104
 #	define CONFIG_BOOTCOMMAND       "if test ${bootslot} -ne 1;then run boot_from_slot_0;else run boot_from_slot_1;fi"
+#elif  BOARD_LDS_G402
+#	define CONFIG_BOOTCOMMAND       "if test ${bootslot} -ne 1;then run boot_from_slot_0;else run boot_from_slot_1;fi"
 #elif  BOARD_LDS_G151
 #	define CONFIG_BOOTCOMMAND       "if test ${bootslot} -ne 1;then run boot_from_slot_0;else run boot_from_slot_1;fi"
 #else
