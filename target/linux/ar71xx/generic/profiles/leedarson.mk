@@ -26,6 +26,18 @@ define Profile/LDS_G104/Description
 	It's Leedarson Education Gateway And its model is lds.gateway.g104
 endef
 
+define Profile/LDS_G402
+	NAME:=Leedarson LDS-G402 board
+	PACKAGES:=$(IOE_BASE) $(TEST_TOOLS) $(WIFI_OPEN) \
+			kmod-usb-serial kmod-usb-serial-pl2303 kmod-ath10k \
+			qca-legacy-uboot-lds-g402
+endef
+
+define Profile/LDS_G402/Description
+	Package set optimized for the Leedarson G402 device.
+	It's Leedarson Own Multi Protocol Gateway And its model is lds.gateway.g402
+endef
+
 define Profile/LDS_G151
 	NAME:=Leedarson LDS-G151 board
 	PACKAGES:=$(IOE_BASE) $(TEST_TOOLS) $(WIFI_OPEN) \
@@ -40,4 +52,5 @@ define Profile/LDS_G151/Description
 endef
 
 $(eval $(call Profile,LDS_G104))
+$(eval $(call Profile,LDS_G402))
 $(eval $(call Profile,LDS_G151))
