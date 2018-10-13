@@ -52,7 +52,7 @@ define Profile/LDS_G151/Description
 endef
 
 define Profile/LDS_G152
-	NAME:=Leedarson LDS-G151 board
+	NAME:=Leedarson LDS-G152 board
 	PACKAGES:=$(IOE_BASE) $(TEST_TOOLS) $(WIFI_OPEN) \
 			kmod-usb-serial kmod-usb-serial-pl2303 kmod-ath10k \
 			qca-legacy-uboot-lds-g152
