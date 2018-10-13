@@ -241,7 +241,46 @@ config wifi-iface
 EOF
 	
 	;;
+
+lds-g152)
 	
+		cat <<EOF
+config wifi-device  radio$devidx
+	option type     mac80211
+	option channel  auto
+	option hwmode	11${mode_11n}${mode_band}
+$dev_id
+$ht_capab
+	option country 'CN'
+	option disabled 0
+	option txpower  15
+
+config wifi-iface
+	option device   radio$devidx
+	option network  lan
+	option mode     ap
+	option ssid     Siren-Hub-$(cat /sys/class/ieee80211/${dev}/macaddress|awk -F ":" '{print $5""$6 }'| tr a-z A-Z)
+	option encryption 'none'
+	option ifname 'wlan0'
+	option key '12345678'
+	option wps_pushbutton '1'
+	option disabled '0'
+
+config wifi-iface
+	option device   radio$devidx
+	option encryption 'psk-mixed'
+	option ssid 'Leedarson'
+	option mode 'sta'
+	option ifname 'wlan0-1'
+	option network 'wwan'
+	option disabled '1'
+	option key '12345678'
+	option wps_pushbutton '1'
+	
+EOF
+
+	;;
+
 *)
 	
 		cat <<EOF
