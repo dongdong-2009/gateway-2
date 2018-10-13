@@ -424,6 +424,9 @@ ar71xx_board_detect() {
 	*"LDS-G104 board")
 		name="lds-g104"
 		;;
+	*"LDS-G402 board")
+		name="lds-g402"
+		;;
 	*"LDS-G151 board")
 		name="lds-g151"
 		;;

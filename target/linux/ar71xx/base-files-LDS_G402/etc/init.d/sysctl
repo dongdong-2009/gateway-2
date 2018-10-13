@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+START=11
+start() {
+	[ -f /etc/sysctl.conf ] && sysctl -p -e >&-
+	[ -d /etc/sysctl.d ] && \
+		for i in /etc/sysctl.d/*.conf; do
+			sysctl -e -p $i >&-
+		done
+	hwclock -s
+	#add for lds cert authentication
+	local year=`date +%Y`
+	if [ $year -lt 2018 ];then
+		date -s 2018-01-01
+	fi
+}

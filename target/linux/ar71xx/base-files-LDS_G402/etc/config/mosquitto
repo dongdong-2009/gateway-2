@@ -1,0 +1,5 @@
+
+config mosquitto 'owrt'
+	option use_uci '1'
+	option no_remote_access '1'
+
