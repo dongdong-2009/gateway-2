@@ -46,7 +46,8 @@ TARGET_FIRMWARE_FLASH=""
 TARGET_EXTEND=""
 
 case "$BOARD_NAME" in
-lds-g104) # 教育照明
+
+lds-g104) # Education Gateway
 	REVISION=`echo ${REVISION} | tr '[:lower:]' '[:upper:]'`
 	IMG_PREFIX="Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-${REVISION}-V${VERSION_NUMBER}"
 	TARGET_UBOOT=${TOPDIR}/release/${IMG_PREFIX}-u-boot.bin
@@ -58,7 +59,7 @@ lds-g104) # 教育照明
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 	
-lds-g151) # A023 Siren Hub
+lds-g151) # The Home Depot (A023)
 	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
 	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
@@ -68,12 +69,26 @@ lds-g151) # A023 Siren Hub
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 	
-lds-g152) # 自主Siren Hub
-	
+lds-g152) # Own Siren Hub
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 	
-lds-g402) # 自主多协议网关
-	
+lds-g402) # Own Multi Protocol Gateway
+	REVISION=`echo ${REVISION} | tr '[:lower:]' '[:upper:]'`
+	IMG_PREFIX="Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-${REVISION}-V${VERSION_NUMBER}"
+	TARGET_UBOOT=${TOPDIR}/release/${IMG_PREFIX}-u-boot.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/${IMG_PREFIX}-uboot_art.flash
+	TARGET_KERNEL=${TOPDIR}/release/${IMG_PREFIX}-kernel.bin
+	TARGET_ROOTFS=${TOPDIR}/release/${IMG_PREFIX}-rootfs.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/${IMG_PREFIX}-sysupgrade.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/${IMG_PREFIX}-kernel_rootfs.flash
+	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 	
 *)
