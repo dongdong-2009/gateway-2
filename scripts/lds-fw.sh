@@ -8,11 +8,11 @@
 # Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.bin
 #
 # lds-g104 # Education Gateway
-# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
-# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.flash
-# Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
-# Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
-# Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002_20181011_V4.01.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002_20181011_V4.01.flash
+# Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002_20181011_V4.01.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002_20181011_V4.01.bin
+# Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002_20181011_V4.01.bin
 #
 # lds-g151 # The Home Depot (A023)
 # Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
@@ -22,11 +22,11 @@
 # Gateway_Host_Sysupgrade_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
 #
 # lds-g152 # Own Siren Hub
-# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
-# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.flash
-# Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
-# Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
-# Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001_20180929_V2.06.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001_20180929_V2.06.flash
+# Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001_20180929_V2.06.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001_20180929_V2.06.bin
+# Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001_20180929_V2.06.bin
 #
 
 # exit 0
@@ -66,12 +66,12 @@ lds-g402) # Own Multi Protocol Gateway
 	;;
 
 lds-g104) # Education Gateway
-	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
-	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_DK_010700006_ZB-ControlBridge-D0002"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 
@@ -86,12 +86,12 @@ lds-g151) # The Home Depot (A023)
 	;;
 
 lds-g152) # Own Siren Hub
-	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
-	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_NK_010700005_ZB-ControlBridge-D0001"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
 
