@@ -477,7 +477,9 @@ platform_check_image() {
 		return 1
 		;;
 	lds-g104 | \
-	lds-g151)
+	lds-g402 | \
+	lds-g151 | \
+	lds-g152)
 		platform_check_image_lds "$1" && return 0
 		return 1
 		;;
@@ -563,7 +565,9 @@ platform_do_upgrade() {
 		platform_do_upgrade_ioe "$ARGV" "$board"
 		;;
 	lds-g104 | \
-	lds-g151)
+	lds-g402 | \
+	lds-g151 | \
+	lds-g152)
 		platform_do_upgrade_lds "$ARGV" "$board"
 		;;
 	*)
@@ -579,7 +583,9 @@ platform_copy_config() {
 	
 	case "$board" in	
 	lds-g104 | \
-	lds-g151)
+	lds-g402 | \
+	lds-g151 | \
+	lds-g152)
 		mount -t ubifs ubi1_0 /mnt
 		cp -af "$CONF_TAR" /mnt/
 		umount /mnt

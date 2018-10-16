@@ -468,7 +468,11 @@ void board_init_r (gd_t *id, ulong dest_addr)
 
 #ifdef BOARD_LDS_G104
 	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
+#elif  BOARD_LDS_G402
+	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
 #elif  BOARD_LDS_G151
+	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
+#elif  BOARD_LDS_G152
 	run_command("mw.l 0x18040000 0x00008312;mw.l 0x18040008 0x0000702e;", 0);
 #else
 	/* NOTHING */
