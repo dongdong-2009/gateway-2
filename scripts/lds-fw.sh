@@ -1,25 +1,33 @@
 #/bin/sh
-# 
-# lds-g151 (A023)
-# "Gateway_Host_All_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_"${DATE}_${VER_NUM}
+#
+# lds-g402 # Own Multi Protocol Gateway
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.flash
+# Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000_20181011_V4.01.bin
+#
+# lds-g104 # Education Gateway
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.flash
+# Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
+# Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000_20181011_V4.01.bin
+#
+# lds-g151 # The Home Depot (A023)
 # Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
 # Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.flash
-# Gateway_Host_Kernel_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin      
-# Gateway_Host_Rootfs_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin      
+# Gateway_Host_Kernel_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
 # Gateway_Host_Sysupgrade_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000_20180929_V2.06.bin
-# 
-# 
-# lds-g104 
-# Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-SVN7187-V1.43-u-boot.bin
-# Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-SVN7187-V1.43-uboot_art.flash
-# Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-SVN7187-V1.43-kernel.bin
-# Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-SVN7187-V1.43-rootfs.bin    
-# Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-SVN7187-V1.43-sysupgrade.bin 
-# 
-# 
-# 
-# 
-# 
+#
+# lds-g152 # Own Siren Hub
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
+# Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.flash
+# Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
+# Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
+# Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700004_ZB-ControlBridge-D0000_20180929_V2.06.bin
+#
 
 # exit 0
 
@@ -37,28 +45,36 @@ echo BIN_KERNEL: ${BIN_KERNEL}
 echo BIN_ROOTFS: ${BIN_ROOTFS}
 echo BIN_SYSUPGRADE: ${BIN_SYSUPGRADE}
 
-TARGET_UBOOT=""
-TARGET_UBOOT_FLASH=""
-TARGET_KERNEL=""
-TARGET_ROOTFS=""
-TARGET_SYSUPGRADE=""
-TARGET_FIRMWARE_FLASH=""
-TARGET_EXTEND=""
+TARGET_UBOOT="u-boot.bin"
+TARGET_UBOOT_FLASH="u-boot.flash"
+TARGET_KERNEL="kernel.bin"
+TARGET_ROOTFS="root.bin"
+TARGET_SYSUPGRADE="sysupgrade.bin"
+TARGET_FIRMWARE_FLASH="firmware.flash"
+TARGET_EXTEND="extend.bin"
 
 case "$BOARD_NAME" in
 
-lds-g104) # Education Gateway
-	REVISION=`echo ${REVISION} | tr '[:lower:]' '[:upper:]'`
-	IMG_PREFIX="Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-${REVISION}-V${VERSION_NUMBER}"
-	TARGET_UBOOT=${TOPDIR}/release/${IMG_PREFIX}-u-boot.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/release/${IMG_PREFIX}-uboot_art.flash
-	TARGET_KERNEL=${TOPDIR}/release/${IMG_PREFIX}-kernel.bin
-	TARGET_ROOTFS=${TOPDIR}/release/${IMG_PREFIX}-rootfs.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/release/${IMG_PREFIX}-sysupgrade.bin
-	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/${IMG_PREFIX}-kernel_rootfs.flash
+lds-g402) # Own Multi Protocol Gateway
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_DK_010700001_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
-	
+
+lds-g104) # Education Gateway
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrage_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_DK_010700002_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_EXTEND=${TOPDIR}/release/extend.bin
+	;;
+
 lds-g151) # The Home Depot (A023)
 	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
 	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
@@ -68,44 +84,23 @@ lds-g151) # The Home Depot (A023)
 	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_A023_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
-	
+
 lds-g152) # Own Siren Hub
-	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
-	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
-	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_G152_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_UBOOT=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_UBOOT_FLASH=${TOPDIR}/release/"Gateway_Host_Uboot_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
+	TARGET_KERNEL=${TOPDIR}/release/"Gateway_Host_Kernel_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_ROOTFS=${TOPDIR}/release/"Gateway_Host_Rootfs_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_SYSUPGRADE=${TOPDIR}/release/"Gateway_Host_Sysupgrade_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.bin
+	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/"Gateway_Host_Firmware_QCA4531_CQ_LDS_NK_010700003_ZB-ControlBridge-D0000"_${DATE}_V${VERSION_NUMBER}.flash
 	TARGET_EXTEND=${TOPDIR}/release/extend.bin
 	;;
-	
-lds-g402) # Own Multi Protocol Gateway
-	REVISION=`echo ${REVISION} | tr '[:lower:]' '[:upper:]'`
-	IMG_PREFIX="Gateway-Host-MulTi-QCA4531-NPA-LDS-NK-CQ-HW-${REVISION}-V${VERSION_NUMBER}"
-	TARGET_UBOOT=${TOPDIR}/release/${IMG_PREFIX}-u-boot.bin
-	TARGET_UBOOT_FLASH=${TOPDIR}/release/${IMG_PREFIX}-uboot_art.flash
-	TARGET_KERNEL=${TOPDIR}/release/${IMG_PREFIX}-kernel.bin
-	TARGET_ROOTFS=${TOPDIR}/release/${IMG_PREFIX}-rootfs.bin
-	TARGET_SYSUPGRADE=${TOPDIR}/release/${IMG_PREFIX}-sysupgrade.bin
-	TARGET_FIRMWARE_FLASH=${TOPDIR}/release/${IMG_PREFIX}-kernel_rootfs.flash
-	TARGET_EXTEND=${TOPDIR}/release/extend.bin
-	;;
-	
+
 *)
 	echo "Unsupported board : $BOARD_NAME"
 	exit 1
 	;;
-	
-esac
 
-usage() 
-{
-	cat <<EOF
-Usage: $0 
-generate image.
-EOF
-	exit 1
-}
+esac
 
 gen_firmware()
 {
@@ -132,11 +127,12 @@ gen_firmware()
 	dd if=/dev/zero  bs=65536 count=1 conv=sync;\
 	dd if=${BIN_ART} bs=65536 count=1 conv=sync ) > ${TARGET_UBOOT_FLASH}
 	
-	( dd if=${BIN_KERNEL} bs=2097152 count=1 conv=sync;\
-	dd if=${BIN_ROOTFS} bs=33554432 count=1 conv=sync;\
-	dd if=${BIN_KERNEL} bs=2097152 count=1 conv=sync;\
-	dd if=${BIN_ROOTFS} bs=33554432 count=1 conv=sync;\
-	dd if=${BIN_EXTEND} bs=62914560 count=1 conv=sync ) > ${TARGET_FIRMWARE_FLASH}
+#	We don't need the whole flash firmware
+#	( dd if=${BIN_KERNEL} bs=2097152 count=1 conv=sync;\
+#	dd if=${BIN_ROOTFS} bs=33554432 count=1 conv=sync;\
+#	dd if=${BIN_KERNEL} bs=2097152 count=1 conv=sync;\
+#	dd if=${BIN_ROOTFS} bs=33554432 count=1 conv=sync;\
+#	dd if=${BIN_EXTEND} bs=62914560 count=1 conv=sync ) > ${TARGET_FIRMWARE_FLASH}
 	
 }
 
