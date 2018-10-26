@@ -135,7 +135,7 @@ gen_firmware()
 #	dd if=${BIN_EXTEND} bs=62914560 count=1 conv=sync ) > ${TARGET_FIRMWARE_FLASH}
 	
 	cd ${TOPDIR}/release/
-	md5sum *  >  md5sums
+	find -maxdepth 1 -type f \! -name 'md5sums'  -printf "%P\n" | sort | xargs md5sum --binary > md5sums 
 	cd -
 }
 
