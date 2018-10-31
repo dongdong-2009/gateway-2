@@ -586,9 +586,9 @@ platform_copy_config() {
 	lds-g402 | \
 	lds-g151 | \
 	lds-g152)
-		mount -t ubifs ubi1_0 /mnt
-		cp -af "$CONF_TAR" /mnt/
-		umount /mnt
+#		mount -t ubifs ubi1_0 /mnt
+#		cp -af "$CONF_TAR" /mnt/
+#		umount /mnt
 		;;	
 	esac
 }
