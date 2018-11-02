@@ -13,6 +13,7 @@ lds-g104 | \
 lds-g402 | \
 lds-g151 | \
 lds-g152)
+	ubimkvol /dev/ubi1 -n 0 -N media -t dynamic --maxavsize
 	mkdir -p /media
 	mount -t ubifs ubi1_0 /media
 	;;
