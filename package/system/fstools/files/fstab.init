@@ -6,11 +6,6 @@ START=40
 start() {                            
 	echo "this file has been obseleted. please call \"/sbin/block mount\" directly"
 	/sbin/block mount
-	[ -f /media/sysupgrade.tgz ] && {
-		echo "- config restore -"
-		cd /
-		tar xzf /media/sysupgrade.tgz
-	}
 }
 
 stop() {                            

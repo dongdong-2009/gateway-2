@@ -123,7 +123,6 @@ platform_check_image_lds()
 	return 0
 }
 
-
 # make sure we got the tools we need during the fw upgrade process
 platform_add_ramfs_lds_tools()
 {
@@ -137,62 +136,45 @@ platform_add_ramfs_lds_tools()
 }
 append sysupgrade_pre_upgrade platform_add_ramfs_lds_tools
 
-
-lds_get_target_firmware() 
-{
-	cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
-	target_firmware=""
-	if [ "$cur_boot_part" = "0" ]
-	then
-		# current primary boot - update alt boot
-		target_firmware="firmware1"
-	elif [ "$cur_boot_part" = "1" ]
-	then
-		# current alt boot - update primary boot
-		target_firmware="firmware0"
-	fi
-	
-	echo "$target_firmware"
-}
-
 platform_do_upgrade_lds() 
 {
 	echo "Performing platform_do_upgrade_lds ..."
 	
-	mkdir -p /var/lock
-	local part_label="$(lds_get_target_firmware)"
-	touch /var/lock/fw_printenv.lock
+	local file=$1
+	local name=$2
+	local fw="firmware1"
+	local rootfs="root-1"
+	local rootfs_data="rootfs_data"
+	local ubi_vol="0"
+	local ubi_ctrl_dev="/dev/ubi_ctrl"
+	local target_bootslot="1"
+	local cur_bootslot=`/usr/sbin/fw_printenv -n bootslot`
 	
-	if [ ! -n "$part_label" ]
-	then
-		echo "cannot find target partition"
-		exit 1
-	fi
+	[ "$cur_bootslot" = "1" ] && {
+		fw="firmware0"
+		rootfs="root-0"
+		target_bootslot="0"
+	}
 	
-	GOT_SYSUPGRADE_BIN="/tmp/sysupgrade.bin"
+	sync
 	
-	get_image "$1" > $GOT_SYSUPGRADE_BIN
+	mtd_fw=$(cat /proc/mtd |grep $fw |cut -f1 -d ":")
+	mtd_dev="/dev/$mtd_fw"
 	
-	mtd erase $part_label
-	mtd -n write $GOT_SYSUPGRADE_BIN $part_label
+	ubidetach -d $ubi_vol $ubi_ctrl_dev
+	mtd erase $mtd_dev
+	mtd_ubi_rootfs="$(cat /proc/mtd |grep $rootfs |cut -f1 -d ":"|grep -Eo '[0-9]+'|head -1)"
+	dd if=$file bs=2048 | nandwrite -p $mtd_dev -
+	ubiattach -m $mtd_ubi_rootfs -d $ubi_vol $ubi_ctrl_dev
+	sleep 2
+	mtd_ubi_rootfs_data="$(cat /proc/mtd |grep $rootfs_data |cut -f1 -d ":" | awk ' // {sub(/mtd/, "", $0);print("/dev/mtdblock"$0)}')"
+	echo $mtd_ubi_rootfs_data
+	mount -t jffs2 $mtd_ubi_rootfs_data /mnt
+	echo $CONF_TAR
+	[ -d /mnt/upper ] || mkdir /mnt/upper
+	tar xzf $CONF_TAR -C /mnt/upper
+	sync
+	umount /mnt
 	
-	local STRING=$(mtd verify $GOT_SYSUPGRADE_BIN $part_label 2>&1)
-	local SUBSTRING="Success"
-	if test "${STRING#*$SUBSTRING}" != "$STRING"
-	then
-		echo "Verifying mtd is SUCCESS"
-		
-		local cur_boot_part=`/usr/sbin/fw_printenv -n bootslot`
-		if [ "$cur_boot_part" = "0" ]
-		then
-			fw_setenv bootslot 1
-		elif [ "$cur_boot_part" = "1" ]
-		then
-			fw_setenv bootslot 0
-		fi
-		
-	else
-		echo "Verifying mtd is FAILED"
-	fi	
-
+	fw_setenv bootslot "$target_bootslot"
 }
