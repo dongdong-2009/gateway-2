@@ -1,5 +1,72 @@
 #!/bin/sh
 
-mount -t ubifs $@
+#
+# root@Leedarson:~# /sbin/mount.ubifs -t ubifs /dev/ubi1_0 /media
+# mount [-fnrsvw] [-t fstype] [-o options] device dir
+#
+
+FLAGS_F=0
+FLAGS_N=0
+FLAGS_R=0
+FLAGS_S=0
+FLAGS_V=0
+FLAGS_W=0
+FSTYPE="ubifs"
+OPTIONS=""
+DEVICE="/dev/ubi1_0"
+TARGET="/media"
+
+# parse options
+while [ -n "$1" ]; do
+	case "$1" in
+		-f)  FLAGS_F=1;;
+		-n)  FLAGS_N=1;;
+		-r)  FLAGS_R=1;;
+		-s)  FLAGS_S=1;;
+		-v)  FLAGS_V=1;;
+		-w)  FLAGS_W=1;;
+		-t)  FSTYPE="$2"; shift;;
+		-o)  OPTIONS="$2"; shift;;
+		-*)
+			echo "Invalid option: $1"
+			exit 1
+		;;
+		*) 
+			 DEVICE="$1"
+			 TARGET="$2"
+			shift;
+			shift;
+		;;
+	esac
+	shift;
+done
+
+CMD="mount -i -t $FSTYPE $DEVICE $TARGET"
+MOUNT_MAX_RETRY=3
+MOUNT_RETRY_INTERVAL=1
+WIFI_SUCC=1
+RETRY=1
+
+until [ $RETRY -gt $MOUNT_MAX_RETRY ]
+do
+	WIFI_SUCC=1
+	echo "Retry $RETRY: CMD=${CMD}"
+	${CMD}
+	grep -w $DEVICE /proc/mounts && break
+	WIFI_SUCC=0
+	
+	[ $MOUNT_MAX_RETRY -eq 1 ] && break	
+	let RETRY+=1	
+	
+	sleep $MOUNT_RETRY_INTERVAL	
+done
+
+if [ $WIFI_SUCC -eq 1 ]; then
+	msg="$DEVICE is already mounted on $TARGET successfully."
+else
+	msg="mounting $DEVICE ($FSTYPE) as $TARGET failed!";
+fi
+
+echo $msg
 
 exit 0
