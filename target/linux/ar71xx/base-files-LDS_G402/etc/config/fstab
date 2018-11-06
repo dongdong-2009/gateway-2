@@ -11,5 +11,3 @@ config 'mount'
 	option fstype 'ubifs'
 	option device '/dev/ubi1_0'
 	option enabled '1'
-	option options 'rw,relatime'
-

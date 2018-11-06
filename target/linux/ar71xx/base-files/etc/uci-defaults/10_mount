@@ -15,6 +15,6 @@ lds-g151 | \
 lds-g152)
 	ubimkvol /dev/ubi1 -n 0 -m -N media
 	mkdir -p /media
-	mount -t ubifs ubi1_0 /media
+	mount -t ubifs /dev/ubi1_0 /media
 	;;
 esac
