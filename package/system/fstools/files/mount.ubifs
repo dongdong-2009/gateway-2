@@ -1,3 +1,5 @@
 #!/bin/sh
 
-mount "$@"
+mount -t ubifs $@
+
+exit 0
