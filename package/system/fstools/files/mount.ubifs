@@ -28,7 +28,7 @@ while [ -n "$1" ]; do
 		-t)  FSTYPE="$2"; shift;;
 		-o)  OPTIONS="$2"; shift;;
 		-*)
-			echo "Invalid option: $1"
+			logger -t "mount.$FSTYPE" "Invalid option: $1"
 			exit 1
 		;;
 		*) 
@@ -50,7 +50,7 @@ RETRY=1
 until [ $RETRY -gt $MOUNT_MAX_RETRY ]
 do
 	WIFI_SUCC=1
-	echo "Retry $RETRY: CMD=${CMD}"
+	logger -t "mount.$FSTYPE" "Retry $RETRY: CMD=${CMD}"
 	${CMD}
 	grep -w $DEVICE /proc/mounts && break
 	WIFI_SUCC=0
@@ -67,6 +67,6 @@ else
 	msg="mounting $DEVICE ($FSTYPE) as $TARGET failed!";
 fi
 
-echo $msg
+logger -t "mount.$FSTYPE" $msg
 
 exit 0
