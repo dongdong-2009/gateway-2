@@ -7,11 +7,6 @@ PKG_BRANCH:=1.1
 PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/local-development.mk
-
-ifeq (exists, $(shell [ -d $(LOCAL_SRC) ] && echo exists))
-SVN_REVISION=$(shell cd $(LOCAL_SRC)/; svn info --show-item last-changed-revision || echo "0000")
-endif
-
 ifeq ($(DUMP)$(PKG_VERSION),)
   PKG_VERSION:=$(shell git ls-remote $(PKG_SOURCE_URL) $(PKG_BRANCH) | cut -b -7)
 endif
@@ -51,7 +46,7 @@ define Build/Configure
 		$(MAKE) -C $(PKG_BUILD_DIR) mrproper);
 	($(foreach var,$(strip $(UBOOT_MAKE_OPTS)), export $(var);) \
 		$(MAKE) -C $(PKG_BUILD_DIR) $(UBOOT_CONFIG)_config \
-			BUILDVERSION=$(PKG_VERSION)-$(PKG_RELEASE) SVNREVISION=$(SVN_REVISION));
+			BUILDVERSION=$(PKG_VERSION)-$(PKG_RELEASE));
 endef
 
 define Build/Compile
