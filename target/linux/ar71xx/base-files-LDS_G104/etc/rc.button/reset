@@ -9,7 +9,7 @@ logger "$BUTTON pressed for $SEEN seconds"
 if [ "$SEEN" -ge 5 ]
 then
 	echo "FACTORY RESET" > /dev/console
-	jffs2reset -y && rm -rf /media/* && reboot &
+	jffs2reset -y && mtd erase extend && reboot &
 fi
 
 return 0
