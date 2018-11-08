@@ -2040,8 +2040,7 @@ board953x_config		:	unconfig
 	@echo '#define __CONFIG_BOARD_NAME $(CFG_BOARD_TYPE)' >>include/config.h
 	@echo '#define CONFIG_BOARD_NAME "$(CFG_BOARD_TYPE)"' >>include/config.h
 	@echo "#define BUILD_VERSION "\"$(BUILDVERSION)\" >>include/config.h
-	@echo "#define SVN_REVISION "\"$(SVNREVISION)\" >>include/config.h
-	
+
 ifdef pll
 	@echo '#define CFG_PLL_FREQ		$(pll)'	>>include/config.h
 else

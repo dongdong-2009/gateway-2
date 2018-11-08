@@ -281,11 +281,11 @@
 	"kernel_0_start=0x0\0"  \
 	"root_0_start=0x400000\0"  \
 	"mtdparts0=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 ubootsvn=" SVN_REVISION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
+	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 version=" BUILD_VERSION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
 	"kernel_1_start=0x2200000\0"  \
 	"root_1_start=0x2600000\0"  \
 	"mtdparts1=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0),32m(root-0),2m(kernel-1)ro,32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 ubootsvn=" SVN_REVISION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
+	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 version=" BUILD_VERSION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
 	"std_bootargs0=board=" BOARD_NAME " console=ttyS0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=0\0"  \
 	"std_bootargs1=board=" BOARD_NAME " console=ttyS0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=1\0"  \
 	"hwversion=1.0\0"  \
@@ -315,11 +315,11 @@
 	"kernel_0_start=0x0\0"  \
 	"root_0_start=0x400000\0"  \
 	"mtdparts0=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 ubootsvn=" SVN_REVISION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
+	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 version=" BUILD_VERSION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
 	"kernel_1_start=0x2200000\0"  \
 	"root_1_start=0x2600000\0"  \
 	"mtdparts1=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0),32m(root-0),2m(kernel-1)ro,32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 ubootsvn=" SVN_REVISION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
+	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 version=" BUILD_VERSION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
 	"std_bootargs0=board=" BOARD_NAME " console=ttyS0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=0\0"  \
 	"std_bootargs1=board=" BOARD_NAME " console=ttyS0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=1\0"  \
 	"hwversion=1.0\0"  \
@@ -349,11 +349,11 @@
 	"kernel_0_start=0x0\0"  \
 	"root_0_start=0x400000\0"  \
 	"mtdparts0=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 ubootsvn=" SVN_REVISION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
+	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 version=" BUILD_VERSION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
 	"kernel_1_start=0x2200000\0"  \
 	"root_1_start=0x2600000\0"  \
 	"mtdparts1=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0),32m(root-0),2m(kernel-1)ro,32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 ubootsvn=" SVN_REVISION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
+	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 version=" BUILD_VERSION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
 	"std_bootargs0=board=" BOARD_NAME " console=ttyUSB0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=0\0"  \
 	"std_bootargs1=board=" BOARD_NAME " console=ttyUSB0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=1\0"  \
 	"hwversion=1.0\0"  \
@@ -385,11 +385,11 @@
 	"kernel_0_start=0x0\0"  \
 	"root_0_start=0x400000\0"  \
 	"mtdparts0=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0)ro,32m(root-0),2m(kernel-1),32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 ubootsvn=" SVN_REVISION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
+	"boot_from_slot_0=setenv bootargs ubi.mtd=root-0 version=" BUILD_VERSION " ${std_bootargs0} mtdparts=${mtdparts0} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_0_start}\0"  \
 	"kernel_1_start=0x2200000\0"  \
 	"root_1_start=0x2600000\0"  \
 	"mtdparts1=spi0.0:256k(u-boot)ro,64k(u-boot-env),64k(u-boot-env-bak),64k(reserved),64k(art);spi0.1:2m(kernel-0),32m(root-0),2m(kernel-1)ro,32m(root-1),60m(extend),34m@0x0(firmware0),34m@0x2200000(firmware1)\0"  \
-	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 ubootsvn=" SVN_REVISION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
+	"boot_from_slot_1=setenv bootargs ubi.mtd=root-1 version=" BUILD_VERSION " ${std_bootargs1} mtdparts=${mtdparts1} production=${production} hwversion=${hwversion} app_switch=${app_switch}; nboot 0x81000000 0 ${kernel_1_start}\0"  \
 	"std_bootargs0=board=" BOARD_NAME " console=ttyUSB0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=0\0"  \
 	"std_bootargs1=board=" BOARD_NAME " console=ttyUSB0,115200 ubi.mtd=extend rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/sbin/init bootslot=1\0"  \
 	"hwversion=1.0\0"  \
