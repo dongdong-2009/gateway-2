@@ -157,6 +157,8 @@ $(eval $(call SetupHostCommand,file,Please install the 'file' package, \
 $(eval $(call SetupHostCommand,openssl,Please install the 'openssl' utility, \
 	openssl version | grep OpenSSL))
 
+$(eval $(call SetupHostCommand,c_rehash,Please install the 'c_rehash' utility, \
+	c_rehash -h | grep c_rehash))
 
 # Install ldconfig stub
 $(eval $(call TestHostCommand,ldconfig-stub,Failed to install stub, \
