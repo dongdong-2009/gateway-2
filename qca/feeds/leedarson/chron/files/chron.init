@@ -1,0 +1,27 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+
+USE_PROCD=1
+START=99
+STOP=13
+PROG=`which chron`
+
+start_service() 
+{	
+	procd_open_instance
+	procd_set_param command "$PROG"
+	procd_set_param respawn
+	procd_close_instance
+}
+
+service_triggers()
+{
+	procd_add_reload_trigger "chron"
+}
+
+reload_service()
+{
+	stop
+	start
+}
+
