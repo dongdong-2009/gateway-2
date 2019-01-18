@@ -8,6 +8,7 @@ PKG_SOURCE_URL:=http://192.168.5.29:8090/gateway/chron.git
 
 LOCAL_SRC:=$(TOPDIR)/qca/src/lds-chron
 include $(INCLUDE_DIR)/local-development.mk
+
 ifeq ($(DUMP)$(PKG_VERSION),)
   PKG_REV:=$(shell git ls-remote $(PKG_SOURCE_URL) $(PKG_BRANCH) | cut -b -7)
   PKG_VERSION:=g$(PKG_REV)
