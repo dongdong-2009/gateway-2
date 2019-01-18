@@ -1,27 +1,25 @@
-#
-# Copyright (C) 2014 OpenWrt.org
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-#
-
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=chron
-PKG_VERSION:=2019-01-17
-PKG_RELEASE=$(PKG_SOURCE_VERSION)
-PKG_BRANCH:=develop
-
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=http://192.168.5.29:8090/gateway/chron.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=$(shell git ls-remote $(PKG_SOURCE_URL) $(PKG_BRANCH) | cut -f1)
+PKG_BRANCH:=develop
+PKG_RELEASE:=1
+PKG_SOURCE_URL:=http://192.168.5.29:8090/gateway/chron.git
 
+LOCAL_SRC:=$(TOPDIR)/qca/src/lds-chron
+include $(INCLUDE_DIR)/local-development.mk
+ifeq ($(DUMP)$(PKG_VERSION),)
+  PKG_REV:=$(shell git ls-remote $(PKG_SOURCE_URL) $(PKG_BRANCH) | cut -b -7)
+  PKG_VERSION:=g$(PKG_REV)
+endif
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_MAINTAINER:=liguowang <liguowang@leedarson.com>
-PKG_LICENSE:=LGPL-2.1
 
-include $(INCLUDE_DIR)/package-seccomp.mk
+LOCAL_VARIANT=$(patsubst chron-%,%,$(patsubst chron-%,%,$(BUILD_VARIANT)))
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
