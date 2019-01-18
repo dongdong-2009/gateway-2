@@ -32,7 +32,7 @@
 # exit 0
 
 DATE=`date "+%Y%m%d"`
-BIN_ART=${TOPDIR}/qca/src/lds/art/MulTi_art_4531.bin
+BIN_ART=${TOPDIR}/qca/src/lds-art/MulTi_art_4531.bin
 
 echo DATE: ${DATE}
 echo TOPDIR: ${TOPDIR}
