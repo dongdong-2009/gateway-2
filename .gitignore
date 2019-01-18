@@ -16,6 +16,7 @@
 /files
 /package/feeds
 /package/openwrt-packages
+/qca/src
 key-build*
 *.orig
 *.rej
