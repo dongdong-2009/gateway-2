@@ -1,0 +1,92 @@
+#!/bin/sh
+
+. /lib/functions.sh
+. /lib/functions/network.sh
+. /usr/share/libubox/jshn.sh
+
+WIFI_START_SCRIPT="/usr/bin/wifi_start.sh"
+WIFI_MAX_RETRY=5
+WIFI_RETRY_INTERVAL=3
+WIFI_SSID=
+
+IFNAME="eth0"
+
+
+main () {
+
+	case "$1" in
+		list)
+			json_init
+			
+			json_add_object "netif"
+			json_close_object
+			
+			json_add_object "info"
+			json_close_object
+			
+			json_add_object "wifi_start"
+			json_close_object
+			
+			json_add_object "wifi_conf_status"
+			json_close_object
+
+			json_add_object "dinfo"
+			json_close_object
+			
+			json_add_object "dtoken"
+			json_close_object
+			
+			json_dump
+		;;
+		call)
+			case "$2" in
+				netif)
+					STRING=`ifconfig ${IFNAME}`
+				
+					localIp=${STRING##*inet addr:}
+					localIp=`echo ${localIp} | cut -d ' ' -f 1`		
+				
+					mask=${STRING##*Mask:}
+					mask=`echo ${mask} | cut -d ' ' -f 1`
+				
+					gw=`route -n|grep 'UG'|tr -s ' ' | cut -f 2 -d ' '`
+				
+					json_init
+					json_add_object "netif"
+					json_add_string "localIp" "${localIp}"
+					json_add_string "mask" "${mask}"
+					json_add_string "gw" "${gw}"
+					json_close_object
+					json_dump
+				;;
+				info)
+					json_init
+					json_add_string "info" "hello"
+					json_dump
+				;;
+				wifi_start)
+					json_init
+					json_add_string "wifi_start" "hello"
+					json_dump
+				;;
+				wifi_conf_status)
+					json_init
+					json_add_string "wifi_conf_status" "hello"
+					json_dump
+				;;
+				dinfo)
+					json_init
+					json_add_string "dinfo" "hello"
+					json_dump
+				;;
+				dtoken)
+					json_init
+					json_add_string "dtoken" "hello"
+					json_dump
+				;;
+			esac
+		;;
+	esac
+}
+
+main "$@"

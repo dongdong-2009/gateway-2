@@ -1,0 +1,20 @@
+#!/bin/sh
+
+
+MODE=`fw_printenv mode | cut -d '=' -f 2`
+[ $MODE == ldsGateTestMode ] && exit 0
+
+AP_SWITCH=`uci get wireless.@wifi-iface[0].disabled`
+
+config=`ifconfig eth0 | grep "RUNNING"`
+if [ $? == 0 -a $AP_SWITCH -eq 0 ] ;then
+	uci set wireless.@wifi-iface[0].disabled=1
+	uci commit
+	wifi up
+	
+	/bin/ledsaction.sh wire eth0&
+fi
+
+
+
+
