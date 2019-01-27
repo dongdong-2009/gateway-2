@@ -1,0 +1,68 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+
+USE_PROCD=1
+START=98
+STOP=14
+
+
+PROG=`which device`
+
+VERSION_NAME="device"
+
+CONF_NAME="siren"
+
+CONF="/etc/device/device.conf"
+
+
+add_parm() 
+{
+	local name=$2
+	local config=$1
+	config_get parm $config $name
+	echo "${name}:$parm" >> $CONF
+}
+
+
+parseconfig() 
+{
+	local config=$1
+	
+	add_parm ${config} strobe
+	add_parm ${config} strobe_level
+	add_parm ${config} warning_mode
+	add_parm ${config} siren_level
+	add_parm ${config} warning_duration
+}
+
+start_service()
+{
+	[ -f $CONF ] && rm -f $CONF
+	config_load ${VERSION_NAME}                      
+	config_foreach parseconfig ${CONF_NAME}   
+
+	 ubus list device | grep device > /dev/null
+	 if [ $? -eq 1 ]
+	 then
+	     echo 'device restart'
+	     $PROG $CONF&
+	 fi
+	
+	
+#	procd_open_instance
+#	procd_set_param command "$PROG" $CONF
+#	procd_set_param respawn
+#	procd_close_instance
+}
+
+#service_triggers()
+#{
+	#procd_add_reload_trigger "device"
+#}
+
+reload_service()
+{
+	stop
+	start
+}
+

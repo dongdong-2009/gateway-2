@@ -1,0 +1,8 @@
+
+config DEVICE_WITH_SIREN_HUB
+		depends on PACKAGE_device
+		bool "add siren function"
+		default y
+ help
+ 	There is a siren function in SIRENHUB geteway, otherwise not
+
