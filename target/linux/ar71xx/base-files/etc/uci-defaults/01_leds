@@ -618,6 +618,12 @@ zcn-1523h-5)
 	ucidef_set_led_netdev "lan2" "lan2" "zcn-1523h:green:lan2" "eth1"
 	;;
 lds-g104)
+	uci -q set system.@system[-1].log_port='514'
+	uci -q set system.@system[-1].conloglevel='5'
+	uci -q set system.@system[-1].cronloglevel='8'
+	radio0_mac=`mtd get_mac radio0`
+	uci -q set system.@system[-1].log_prefix="${board}-${radio0_mac}"
+
 #	uci -q set system.@system[-1].hostname='Leedarson'
 #	uci -q set system.@system[-1].zonename='Asia/Shanghai'
 #	uci -q set system.@system[-1].timezone='CST-8'
@@ -626,6 +632,12 @@ lds-g104)
 #	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"
 	;;
 lds-g402)
+	uci -q set system.@system[-1].log_port='514'
+	uci -q set system.@system[-1].conloglevel='5'
+	uci -q set system.@system[-1].cronloglevel='8'
+	radio0_mac=`mtd get_mac radio0`
+	uci -q set system.@system[-1].log_prefix="${board}-${radio0_mac}"
+
 #	uci -q set system.@system[-1].hostname='Leedarson'
 #	uci -q set system.@system[-1].zonename='Asia/Shanghai'
 #	uci -q set system.@system[-1].timezone='CST-8'
@@ -634,6 +646,12 @@ lds-g402)
 #	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"
 	;;
 lds-g151)
+	uci -q set system.@system[-1].log_port='514'
+	uci -q set system.@system[-1].conloglevel='5'
+	uci -q set system.@system[-1].cronloglevel='8'
+	radio0_mac=`mtd get_mac radio0`
+	uci -q set system.@system[-1].log_prefix="${board}-${radio0_mac}"
+
 #	uci -q set system.@system[-1].hostname='Leedarson'
 #	uci -q set system.@system[-1].zonename='Asia/Shanghai'
 #	uci -q set system.@system[-1].timezone='CST-8'
@@ -641,7 +659,13 @@ lds-g151)
 #	uci -q set system.led_power.trigger='default-on'
 #	ucidef_set_led_timer "lan" "lan" "lds:green:lan" "1000" "1000"
 	;;
-lds-g152)
+lds-g152)	
+	uci -q set system.@system[-1].log_port='514'
+	uci -q set system.@system[-1].conloglevel='5'
+	uci -q set system.@system[-1].cronloglevel='8'
+	radio0_mac=`mtd get_mac radio0`
+	uci -q set system.@system[-1].log_prefix="${board}-${radio0_mac}"
+
 #	uci -q set system.@system[-1].hostname='Leedarson'
 #	uci -q set system.@system[-1].zonename='Asia/Shanghai'
 #	uci -q set system.@system[-1].timezone='CST-8'
