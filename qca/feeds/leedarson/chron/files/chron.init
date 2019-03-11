@@ -6,10 +6,23 @@ START=99
 STOP=13
 PROG=`which chron`
 
+validate_chron_section() {
+	uci_validate_section chron chron "${1}" \
+		'identifier:string' \
+		'loglevel:uinteger' 
+}
+
 start_service() 
-{	
+{
+	local identifier loglevel
+	
+	validate_chron_section chron || {
+		echo "validation failed"
+		return 1
+	}
+	
 	procd_open_instance
-	procd_set_param command "$PROG"
+	procd_set_param command "$PROG" -i "$identifier" -l "$loglevel"
 	procd_set_param respawn
 	procd_close_instance
 }
@@ -24,4 +37,3 @@ reload_service()
 	stop
 	start
 }
-
