@@ -1,0 +1,1048 @@
+{
+    "Light_ColorTemperature": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zllcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "ikea.light.floaltpanelws30x30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "osram.light.classica60tw","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbteducolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "mli.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "slv.light.zbtcolortemperaturepanel","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "leadenergyag.light.zbtcctlightpannel10104","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlighta60","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightbr30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightcandle","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdsd","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightgu10","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightpar38","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "eaton.light.halorl5601","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe27wsclear950lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdown0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LTW013","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zllcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "ikea.light.floaltpanelws30x30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "osram.light.classica60tw","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbteducolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "mli.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "slv.light.zbtcolortemperaturepanel","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "leadenergyag.light.zbtcctlightpannel10104","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlighta60","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightbr30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightcandle","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdsd","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightgu10","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightpar38","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "eaton.light.halorl5601","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe27wsclear950lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdown0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LTW013","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "CCT": 
+			[
+                {"ModleId": "lds.light.zllcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "ikea.light.floaltpanelws30x30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "osram.light.classica60tw","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbteducolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "mli.light.zbtcolortemperature","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "slv.light.zbtcolortemperaturepanel","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},	
+				{"ModleId": "leadenergyag.light.zbtcctlightpannel10104","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlighta60","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},	
+				{"ModleId": "lds.light.zbtcctlightbr30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightcandle","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdsd","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightgu10","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightpar38","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "eaton.light.halorl5601","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe27wsclear950lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtcctlightdown0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LTW013","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_Dimmable": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zlldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.a806sq1r5","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zhadimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcrldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtbbldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zlldimmablelighte","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlighta60","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightbr30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightcandle","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightdsd","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightgu10","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightpar38","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0002","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimconnectord0000","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0004","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0005","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26opal1000lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "schneider.light.puckdimmer1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-DIM","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zlldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.a806sq1r5","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zhadimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcrldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtbbldimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimmablelight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zlldimmablelighte","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlighta60","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightbr30","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightcandle","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightdsd","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightgu10","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimlightpar38","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0002","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtdimconnectord0000","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0004","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbdimcontrollerd0005","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26opal1000lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "schneider.light.puckdimmer1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-DIM","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_RGBW": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zllextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "aurora.light.rgbbr30bulb01us","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zhacolorlight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "iottech.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "philips.light.lct012","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26cwsopal600lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBW","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBCCT","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LCT003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zllextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "aurora.light.rgbbr30bulb01us","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zhacolorlight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "iottech.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "philips.light.lct012","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26cwsopal600lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBW","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBCCT","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LCT003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "CCT": 
+			[
+                {"ModleId": "lds.light.zllextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "aurora.light.rgbbr30bulb01us","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zhacolorlight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "iottech.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "philips.light.lct012","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26cwsopal600lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBW","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBCCT","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LCT003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "RGBW": 
+			[
+                {"ModleId": "lds.light.zllextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "aurora.light.rgbbr30bulb01us","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zhacolorlight","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtextendedcolor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "iottech.light.zbtrgbwlightstrip0044","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "philips.light.lct012","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.light.tradfribulbe26cwsopal600lm","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBW","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Immax.light.IM-Z3.0-RGBCCT","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "Philips.light.LCT003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_Doormagnet": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.magnet.zhadoorlocksensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.magnet.zhadoorsensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.magnet.zbsmartdwallonofv3","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.magnet.zbsmartdwallv1a","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.magnet.zbsmartdwallonofv2","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.magnet.zbdwsensors0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.magnet.zbdwsensors0000001","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "A025.magnet.BDSZG001","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "wulian.magnet.tyg01","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "centralite.magnet.3323g","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "Immax.magnet.DoorWindow-Sensor-ZB3.0","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.magnet.zhadoorlocksensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.magnet.zhadoorsensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.magnet.zbsmartdwallonofv3","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.magnet.zbsmartdwallv1a","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.magnet.zbsmartdwallonofv2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.magnet.zbdwsensors0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.magnet.zbdwsensors0000001","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "A025.magnet.BDSZG001","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "wulian.magnet.tyg01","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "centralite.magnet.3323g","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "Immax.magnet.DoorWindow-Sensor-ZB3.0","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_Keypad": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.keypad.zbkeypad","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.keypad.zbkeypadallv2","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "xp.keypad.edexpmono","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "Immax.keypad.Keypad-ZB3.0","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.keypad.zbkeypad","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.keypad.zbkeypadallv2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "xp.keypad.edexpmono","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "Immax.keypad.Keypad-ZB3.0","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_PIR": 
+	[
+		{
+            "Occupancy": 
+			[
+                {"ModleId": "philips.motion.sml001","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.motion.zhapirsensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.motion.zbmotionsensors0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.motion.z30motionsensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "philips.motion.sml001","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "ihorn.motion.lh02121","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.motion.zbsmartpirallv1a","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.motion.zbsmartpirallonofv2","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "wulian.motion.trt0x","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "centralite.motion.3328g","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "Immax.motion.Motion-Sensor-ZB3.0","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.motion.zhapirsensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.motion.zbmotionsensors0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.motion.z30motionsensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "philips.motion.sml001","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "ihorn.motion.lh02121","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.motion.zbsmartpirallv1a","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.motion.zbsmartpirallonofv2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "wulian.motion.trt0x","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "centralite.motion.3328g","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "Immax.motion.Motion-Sensor-ZB3.0","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_Humiture": 
+	[
+		{
+            "Temp": 
+			[
+                {"ModleId": "lds.sensor_ht.zhatemperaturesensor","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "lds.sensor_ht.zbthallv2l","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "somfy.sensor_ht.1811682","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "wulian.sensor_ht.tws01","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "centralite.sensor_ht.3310g","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "vmark.sensor_ht.vts03w01","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"}
+            ]
+        },
+		{
+            "Hum": 
+			[
+                {"ModleId": "lds.sensor_ht.zhatemperaturesensor","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+                {"ModleId": "lds.sensor_ht.zbthallv2l","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+                {"ModleId": "somfy.sensor_ht.1811682","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+                {"ModleId": "wulian.sensor_ht.tws01","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+               
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"}
+            ]
+        },
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.sensor_ht.zhatemperaturesensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.sensor_ht.zbthallv2l","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "somfy.sensor_ht.1811682","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "wulian.sensor_ht.tws01","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "centralite.sensor_ht.3310g","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "vmark.sensor_ht.vts03w01","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.sensor_ht.zhatemperaturesensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.sensor_ht.zbthallv2l","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "somfy.sensor_ht.1811682","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "wulian.sensor_ht.tws01","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "centralite.sensor_ht.3310g","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "vmark.sensor_ht.vts03w01","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+               
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_Keyfob": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.keyfob.zllcctcontroller","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"},
+                {"ModleId": "lds.keyfob.zbkeyfob","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"},
+				{"ModleId": "lds.keyfob.zbkeyfoballv2","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"},
+				{"ModleId": "lds.keyfob.zbkeyfobsensors0000","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"},
+				{"ModleId": "Immax.keyfob.Keyfob-ZB3.0","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 43200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.keyfob.zllcctcontroller","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.keyfob.zbkeyfob","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.keyfob.zbkeyfoballv2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.keyfob.zbkeyfobsensors0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "Immax.keyfob.Keyfob-ZB3.0","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_OnOff_Connector": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectormicro","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zhasmartconnectormicro","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zllsmartconnectoronoff","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "Energy": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+                {"ModleId": "lds.connector.zhasmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+                {"ModleId": "lds.connector.zllsmartconnectoronoff","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"}
+            ]
+        },
+		{
+            "Voltage": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+                {"ModleId": "lds.connector.zhasmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+                {"ModleId": "lds.connector.zllsmartconnectoronoff","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"}
+            ]
+        },
+		{
+            "Current": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+                {"ModleId": "lds.connector.zhasmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+                {"ModleId": "lds.connector.zllsmartconnectoronoff","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"}
+            ]
+        },
+		{
+            "Watts": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+                {"ModleId": "lds.connector.zhasmartconnectormicro","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+                {"ModleId": "lds.connector.zllsmartconnectoronoff","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"}
+            ]
+        }
+    ],
+	"Light_Dimmable_Connector": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectordim","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zllsmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "construlita.connector.zhasmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zhasmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.connector.zllsmartconnectordim","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zllsmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "construlita.connector.zhasmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.connector.zhasmartconnectordim010v","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Control_Remote_Keycode": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.remote.zbtremoteeudimv2a","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.remote.zbtremoteeudimv1a2","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.remote.zbtdimcontrollerd0800","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "LDS.ZBT-DIMSwitch-D0800","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "LDS.ZBT-DIMSwitch-D0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.remote.zbtremoteeudimv2a","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.remote.zbtremoteeudimv1a2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.remote.zbtdimcontrollerd0800","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "LDS.ZBT-DIMSwitch-D0800","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "LDS.ZBT-DIMSwitch-D0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Control_Remote_Group": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.remote.zbtrgbwswitchd0800","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.remote.zbtcctswitchd0800","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.remote.zbtrgbwswitchd0800","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.remote.zbtcctswitchd0800","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Control_Remote": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "c019.remote.remote50au","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "Immax.remote.IM-Z30-Remote ","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "c019.remote.remote50au","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "Immax.remote.IM-Z30-Remote ","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Control_Remote_RGBW": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.remote.zbtremoteallrgbw","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "mli.remote.zbtremoteallrgbw","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.remote.zbtremoteallrgbw","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "mli.remote.zbtremoteallrgbw","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Control_Remote_Dimmable": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.remote.zbtremoteeudimv1a","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "c046.remote.zbtremoteeudimv1a2","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.remote.zbtremoteeudimv1a","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "c046.remote.zbtremoteeudimv1a2","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_Dimmable_Pir_Illuminance": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "daintreenetworks.illuminance.multisensor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.illuminance.zbtdimsensord0000","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "daintreenetworks.illuminance.multisensor","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.illuminance.zbtdimsensord0000","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "Occupancy": 
+			[
+                {"ModleId": "daintreenetworks.illuminance.multisensor","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.illuminance.zbtdimsensord0000","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Illuminance": 
+			[
+                {"ModleId": "daintreenetworks.illuminance.multisensor","MinTime": 1,"MaxTime": 600,"ChangeVal": "AC0D"},
+                {"ModleId": "lds.illuminance.zbtdimsensord0000","MinTime": 1,"MaxTime": 600,"ChangeVal": "AC0D"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 600,"ChangeVal": "AC0D"}
+            ]
+        }
+    ],
+	"Wall_Keycode": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.wall.freelocate4Key","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.wall.freelocate4Key","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_Dimmable_Illuminance": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.illuminance.zhacontrolcnofv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.illuminance.zhacontrolcn0fv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.illuminance.zhacontrolcnofv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.illuminance.zhacontrolcn0fv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Illuminance": 
+			[
+                {"ModleId": "lds.illuminance.zhacontrolcnofv1","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"},
+				{"ModleId": "lds.illuminance.zhacontrolcn0fv1","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"},
+
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"}
+            ]
+        },
+		{
+            "Level": 
+			[
+                {"ModleId": "lds.illuminance.zhacontrolcnofv1","MinTime": 1,"MaxTime": 1800,"ChangeVal": "01"},
+				{"ModleId": "lds.illuminance.zhacontrolcn0fv1","MinTime": 1,"MaxTime": 1800,"ChangeVal": "01"},
+
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 1800,"ChangeVal": "01"}
+            ]
+        }
+    ],
+	"WindowCovering_Nomal": 
+	[
+        {
+            "Lift": 
+			[
+                {"ModleId": "lds.curtian.zhasmartcurtaincnofv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "05"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "05"}
+            ]
+        }
+    ],
+	"Sensor_Waterleak": 
+	[
+		{
+            "Temp": 
+			[
+                {"ModleId": "lds.flood.zhawaterleaksensor","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+				{"ModleId": "lds.flood.zhacsw","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+				{"ModleId": "lds.flood.zbwaterleakallv2l","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+				{"ModleId": "somfy.flood.1870348a","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+				{"ModleId": "centralite.flood.3315g","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"}
+            ]
+        },
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.flood.zhawaterleaksensor","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "lds.flood.zhacsw","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.flood.zbwaterleakallv2l","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+ 				{"ModleId": "somfy.flood.1870348a","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+ 				{"ModleId": "lds.flood.zbwatersensord0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+ 				{"ModleId": "wulian.flood.tsj01","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+ 				{"ModleId": "centralite.flood.3315g","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+               
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.flood.zhawaterleaksensor","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "lds.flood.zhacsw","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.flood.zbwaterleakallv2l","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "somfy.flood.1870348a","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.flood.zbwatersensord0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "wulian.flood.tsj01","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "centralite.flood.3315g","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Smartplug_Meter": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.plug.zhasmartplugna","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.plug.zbtsmartplugallofpmwuidv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.plug.zhasmartplugallofpmwuidv1","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "centralite.plug.4257050rzhac","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "centralite.plug.4257050zhac","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0003","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0005","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "Energy": 
+			[
+                {"ModleId": "lds.plug.zhasmartplugna","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+                {"ModleId": "lds.plug.zbtsmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+				{"ModleId": "lds.plug.zhasmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0003","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0005","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"},
+				
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "FF"}
+            ]
+        },
+		{
+            "Voltage": 
+			[
+                {"ModleId": "lds.plug.zhasmartplugna","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+                {"ModleId": "lds.plug.zbtsmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				{"ModleId": "lds.plug.zhasmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				{"ModleId": "centralite.plug.4257050rzhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				{"ModleId": "centralite.plug.4257050zhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0003","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0005","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"},
+				
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0A"}
+            ]
+        },
+		{
+            "Current": 
+			[
+                {"ModleId": "lds.plug.zhasmartplugna","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+                {"ModleId": "lds.plug.zbtsmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				{"ModleId": "lds.plug.zhasmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				{"ModleId": "centralite.plug.4257050rzhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				{"ModleId": "centralite.plug.4257050zhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0003","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0005","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"},
+				
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "0E"}
+            ]
+        },
+		{
+            "Watts": 
+			[
+                {"ModleId": "lds.plug.zhasmartplugna","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+                {"ModleId": "lds.plug.zbtsmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				{"ModleId": "lds.plug.zhasmartplugallofpmwuidv1","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				{"ModleId": "centralite.plug.4257050rzhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				{"ModleId": "centralite.plug.4257050zhac","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0003","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				{"ModleId": "LDS.ZB-ONOFFPlug-D0005","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"},
+				
+				{"ModleId": "unknown","MinTime": 1,"MaxTime": 7200,"ChangeVal": "03"}
+            ]
+        }
+    ],
+	"Smartplug_OnOff": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "osram.plug.plug01","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "innr.plug.sp120","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "lds.plug.smaplug","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+				{"ModleId": "ikea.plug.tradfricontroloutlet","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_FourInOne": 
+	[
+        {
+            "Temp": 
+			[
+                {"ModleId": "lds.multidevice.zbsmartpirthv1","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                {"ModleId": "Immax.multidevice.4in1-Sensor-ZB3.0","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"},
+                
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "6400"}
+            ]
+        },
+		{
+            "Hum": 
+			[
+                {"ModleId": "lds.multidevice.zbsmartpirthv1","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+                {"ModleId": "Immax.multidevice.4in1-Sensor-ZB3.0","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"},
+                
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "F401"}
+            ]
+        },
+		{
+            "Illuminance": 
+			[
+                {"ModleId": "lds.multidevice.zbsmartpirthv1","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"},
+                {"ModleId": "Immax.multidevice.4in1-Sensor-ZB3.0","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"},
+
+				{"ModleId": "unknown","MinTime": 600,"MaxTime": 1800,"ChangeVal": "FFFF"}
+            ]
+        },
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.multidevice.zbsmartpirthv1","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "Immax.multidevice.4in1-Sensor-ZB3.0","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.multidevice.zbsmartpirthv1","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "Immax.multidevice.4in1-Sensor-ZB3.0","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_PIR_AntiPet": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.motion.zbmotionsensors00000001","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},     
+				
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "lds.motion.zbmotionsensors00000001","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Sensor_Smoke": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "ihorn.sensor_smoke.lh05121","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                {"ModleId": "heiman.sensor_smoke.smokesensorem","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.sensor_smoke.zbsmokesensord0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        },
+		{
+            "Bind": 
+			[
+                {"ModleId": "ihorn.sensor_smoke.lh05121","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                {"ModleId": "heiman.sensor_smoke.smokesensorem","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+				{"ModleId": "lds.sensor_smoke.zbsmokesensord0000","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 1620,"MaxTime": 1620,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Wall_Control_Keycode": 
+	[
+        {
+            "BatteryRemain": 
+			[
+                {"ModleId": "lds.wall.zbtflswitchd0000","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+				{"ModleId": "lds.wall.zbtflswitchd0001","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"},
+                
+				{"ModleId": "unknown","MinTime": 3600,"MaxTime": 7200,"ChangeVal": "14"}
+            ]
+        }
+    ],
+	"Light_ColorTemperature_Effect": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zbtcctlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zbtcctlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "CCT": 
+			[
+                {"ModleId": "lds.light.zbtcctlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtcctlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_Dimmable_Effect": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zbtdimlightgls0804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightgu100804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightc4700804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightbr300804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightpar380804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zbtdimlightgls0804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightgu100804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightc4700804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightbr300804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtdimlightpar380804","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ],
+	"Light_RGBW_Effect": 
+	[
+        {
+            "OnOff": 
+			[
+                {"ModleId": "lds.light.zbtrgbwlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr6500904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightstrip0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+        {
+            "Dimming": 
+			[
+                {"ModleId": "lds.light.zbtrgbwlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr6500904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightstrip0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "CCT": 
+			[
+                {"ModleId": "lds.light.zbtrgbwlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr6500904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightstrip0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        },
+		{
+            "RGBW": 
+			[
+                {"ModleId": "lds.light.zbtrgbwlightgls0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr300904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightbr6500904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightgu100904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightc4700904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                {"ModleId": "lds.light.zbtrgbwlightstrip0904","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"},
+                
+				{"ModleId": "unknown","MinTime": 7200,"MaxTime": 7200,"ChangeVal": "0100"}
+            ]
+        }
+    ]
+}	

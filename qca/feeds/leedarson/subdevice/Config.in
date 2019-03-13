@@ -1,0 +1,37 @@
+#Subdevice configuration
+
+choice
+	prompt "Subdevice Branch Select"
+	default SUBDEVICE_BRANCH_A023
+
+	config SUBDEVICE_BRANCH_A023
+		bool "Subdevice Branch A023"
+		depends on PACKAGE_subdevice
+		help 
+			use subdevice branch a023
+	
+	config SUBDEVICE_BRANCH_MULTIPLE
+		bool "Subdevice Branch Multiple Protocol"
+		depends on PACKAGE_subdevice
+		help 
+			use subdevice branch multiple protocol	
+		
+	config SUBDEVICE_BRANCH_EDU
+		bool "Subdevice Branch Education"
+		depends on PACKAGE_subdevice
+		help 
+			use subdevice branch education		
+			
+endchoice
+
+config SUBDEVICE_ZWAVE_ENABLE
+	bool "Z-wave enable"
+	depends on PACKAGE_subdevice
+	default n
+	help 
+		use zwave module	
+
+
+		
+
+

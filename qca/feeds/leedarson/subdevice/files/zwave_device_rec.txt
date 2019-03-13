@@ -1,0 +1,243 @@
+{
+  "device_records":
+  [
+	  {
+	      "_comment": "leedarson CCT",
+	      "vid":881,
+	      "ptype":259,
+	      "pid":1,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson arrivalsensor",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":2,
+	      "category":114
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":3,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":3,
+	      "pid":3,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":4,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":3,
+	      "pid":4,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":5,
+	      "category":101
+      },
+      {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":3,
+	      "pid":5,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":6,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":7,
+	      "category":100
+      },
+      {
+	      "_comment": "leedarson doorsensor",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":8,
+	      "category":108
+      },
+	  {
+	      "_comment": "leedarson multisensor",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":9,
+	      "category":118
+      },
+	  {
+	      "_comment": "leedarson multisensor",
+	      "vid":1027,
+	      "ptype":512,
+	      "pid":9,
+	      "category":118
+      },
+      {
+	      "_comment": "leedarson multisensor",
+	      "vid":1027,
+	      "ptype":2,
+	      "pid":1,
+	      "category":118
+      },
+      {
+	      "_comment": "leedarson waterleaker",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":10,
+	      "category":110
+      },
+	  {
+	      "_comment": "leedarson smartplug",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":11,
+	      "category":106
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":14,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":16,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":18,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":19,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":20,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson arrivalsensor",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":21,
+	      "category":114
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":22,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":23,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":24,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson RGBLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":32,
+	      "category":102
+      },
+	  {
+	      "_comment": "leedarson CCTLight",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":33,
+	      "category":100
+      },
+	  {
+	      "_comment": "leedarson DIM",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":34,
+	      "category":101
+      },
+	  {
+	      "_comment": "leedarson doorsensor",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":35,
+	      "category":108
+      },
+	  {
+	      "_comment": "leedarson waterleaker",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":36,
+	      "category":110
+      },
+	  {
+	      "_comment": "leedarson smartplug",
+	      "vid":768,
+	      "ptype":512,
+	      "pid":37,
+	      "category":106
+      },
+      {
+      	  "_comment": "leedarson PetI Motion",
+	      "vid":768,
+	      "ptype":768,
+	      "pid":38,
+	      "category":121
+      },
+      {
+      	  "_comment": "leedarson PetI Motion",
+	      "vid":768,
+	      "ptype":769,
+	      "pid":38,
+	      "category":121
+      },
+      {
+      	  "_comment": "leedarson siren",
+	      "vid":768,
+	      "ptype":768,
+	      "pid":49,
+	      "category":122
+      }
+  ]
+}
