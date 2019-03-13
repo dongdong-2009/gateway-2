@@ -1,0 +1,69 @@
+#zware configuration
+
+choice
+	prompt "region"
+	default ZWAVE_FW_US
+		
+	config ZWAVE_FW_EU
+		depends on PACKAGE_zware
+		bool "zwave firmware EU"
+		help 
+			use zwave firmware EU
+
+	config ZWAVE_FW_US
+		depends on PACKAGE_zware
+		bool "zwave firmware US"
+		help 
+			use zwave firmware US	
+
+	config ZWAVE_FW_CN
+		depends on PACKAGE_zware
+		bool "zwave firmware CN"
+		help 
+			use zwave firmware CN
+
+	config ZWAVE_FW_HK
+		depends on PACKAGE_zware
+		bool "zwave firmware HK"
+		help 
+			use zwave firmware HK
+
+	config ZWAVE_FW_ANZ
+		depends on PACKAGE_zware
+		bool "zwave firmware ANZ"
+		help 
+			use zwave firmware ANZ
+
+	config ZWAVE_FW_JP
+		depends on PACKAGE_zware
+		bool "zwave firmware JP"
+		help 
+			use zwave firmware JP
+			
+	config ZWAVE_FW_RU
+		depends on PACKAGE_zware
+		bool "zwave firmware RU"
+		help 
+			use zwave firmware RU
+
+	config ZWAVE_FW_IL
+		depends on PACKAGE_zware
+		bool "zwave firmware IL"
+		help 
+			use zwave firmware IL
+
+	config ZWAVE_FW_IN
+		depends on PACKAGE_zware
+		bool "zwave firmware IN"
+		help 
+			use zwave firmware IN
+
+	config ZWAVE_FW_KR
+		depends on PACKAGE_zware
+		bool "zwave firmware KR"
+		help 
+			use zwave firmware KR
+	
+endchoice
+
+
