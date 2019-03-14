@@ -27,7 +27,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=$(PKG_REV)
 
-LOCAL_VARIANT=$(patsubst device-%,%,$(patsubst device-%,%,$(BUILD_VARIANT)))
+LOCAL_VARIANT=$(patsubst zware-%,%,$(patsubst zware-%,%,$(BUILD_VARIANT)))
 
 PKG_MAINTAINER:=yjm
 
