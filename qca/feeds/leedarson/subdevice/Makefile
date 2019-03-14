@@ -16,7 +16,7 @@ PKG_SOURCE_URL:=http://192.168.5.29:8090/gateway/subdevice.git
 PKG_MAINTAINER:=louis <zhanghuawei@leedarson.com>
 PKG_LICENSE:=LGPL-2.1
 
-LOCAL_SRC:=$(TOPDIR)/qca/src/lds-subdevice
+LOCAL_SRC:=$(TOPDIR)/qca/src/subdevice
 include $(INCLUDE_DIR)/local-development.mk
 
 ifeq ($(DUMP)$(PKG_VERSION),)

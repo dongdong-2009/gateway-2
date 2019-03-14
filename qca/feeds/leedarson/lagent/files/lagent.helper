@@ -1,0 +1,111 @@
+#!/bin/sh
+
+. /lib/functions.sh
+. /lib/functions/network.sh
+. /usr/share/libubox/jshn.sh
+
+WIFI_START_SCRIPT="/usr/bin/wifi_start.sh"
+WIFI_MAX_RETRY=5
+WIFI_RETRY_INTERVAL=3
+WIFI_SSID=
+
+
+main () 
+{
+	case "$1" in
+		list)
+			json_init
+			
+			json_add_object "hello"
+			json_close_object
+			
+			json_add_object "info"
+			json_close_object
+			
+			json_add_object "wifi_info"
+			json_close_object
+			
+			json_dump
+		;;
+		call)
+			case "$2" in
+				hello)
+					json_init
+					json_add_string "hello" "world"
+					json_dump
+				;;
+				info)
+					STRING=`wpa_cli status`
+					
+					ifname=${STRING#*\'}
+					ifname=${ifname%%\'*}
+					
+					ssid=${STRING##*ssid=}
+					ssid=`echo ${ssid} | cut -d ' ' -f 1`
+					
+					bssid=${STRING##*bssid=}
+					bssid=`echo ${bssid} | cut -d ' ' -f 1 | tr '[:lower:]' '[:upper:]'`
+					
+					ip=${STRING##*ip_address=}
+					ip=`echo ${ip} | cut -d ' ' -f 1`
+					
+					STRING=`ifconfig ${ifname}`
+					
+					netmask=${STRING##*Mask:}
+					netmask=`echo ${netmask} | cut -d ' ' -f 1`
+					
+					gw=`route -n|grep 'UG'|tr -s ' ' | cut -f 2 -d ' '`
+					
+					json_init
+					json_add_object "result"
+					
+					json_add_object "ap"
+					json_add_string "ssid" "${ssid}"
+					json_add_string "bssid" "${bssid}"
+					json_close_object
+					
+					json_add_object "netif"
+					json_add_string "localIp" "${ip}"
+					json_add_string "mask" "${netmask}"
+					json_add_string "gw" "${gw}"
+					json_close_object
+					
+					json_close_object
+					json_dump
+					
+				;;
+				wifi_info)
+					STRING=`wpa_cli status`
+					
+					ifname=${STRING#*\'}
+					ifname=${ifname%%\'*}
+					
+					ssid=${STRING##*ssid=}
+					#ssid=`echo ${ssid} | cut -d ' ' -f 1`
+					#ssid=`echo "${ssid}" | head -n 1`
+					ssid=`uci get wireless.@wifi-iface[1].ssid`
+					
+					key_mgmt=${STRING##*key_mgmt=}
+					key_mgmt=`echo ${key_mgmt} | cut -d ' ' -f 1`
+					
+					STRING=`iwconfig ${ifname}`
+					
+					signal_level=${STRING##*Signal level=}
+					signal_level=`echo ${signal_level} | cut -d ' ' -f 1`
+					
+					json_init
+					json_add_object "result"
+					
+					json_add_string "ssid" "${ssid}"
+					json_add_string "key_mgmt" "${key_mgmt}"
+					json_add_string "signal_level" "${signal_level}"
+					
+					json_close_object
+					json_dump
+				;;
+			esac
+		;;
+	esac
+}
+
+main "$@"

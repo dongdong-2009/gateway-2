@@ -1,0 +1,165 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+
+USE_PROCD=1
+START=99
+STOP=14
+
+PROG=`which lagent`
+
+VERSION_NAME="lagent"
+
+CONF="/etc/lagent/lagent.conf"
+CERT_FILE="/etc/lagent/cert.pem"
+KEY_FILE="/etc/lagent/privkey.pem"
+DEVICE_TOKEN="/media/device.token"
+IFNAME="radio0"
+
+MODEL="Immax.Bridge-Alarm-ZB3.0"
+SRV_ADDR="eu-smarthome.arnoo.com"
+SRV_VER="1.0.1"
+
+
+add_parm() 
+{
+	local name=$2
+	local config=$1
+	config_get parm $config $name
+	echo "${name} $parm" >> $CONF
+}
+
+parseconfig() 
+{
+	local config=$1
+	
+	add_parm ${config} did
+	add_parm ${config} sn
+	add_parm ${config} passwd
+	add_parm ${config} mac
+	add_parm ${config} model
+	add_parm ${config} mqtt_host
+	add_parm ${config} mqtt_port
+	add_parm ${config} cafile
+	add_parm ${config} certfile
+	add_parm ${config} keyfile
+	add_parm ${config} token
+	add_parm ${config} fw_ver
+	add_parm ${config} hw_ver
+	add_parm ${config} zonename
+	add_parm ${config} capath
+	add_parm ${config} srv_addr
+	add_parm ${config} srv_ver
+}
+
+bootstrap() 
+{
+	did=`fw_printenv -n DeviceUuid`
+	if [ x$did != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].did=$did
+	fi
+	
+	passwd=`fw_printenv -n DeviceChiper`
+	if [ x$passwd != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].passwd=$passwd
+	fi
+	
+	sn=`fw_printenv -n DeviceSn`
+	if [ x$passwd != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].sn=$sn
+	fi
+	
+	mac=`mtd get_mac ${IFNAME}`
+	if [ x$mac != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].mac=$mac
+	fi
+	
+	if [ ! -f $DEVICE_TOKEN ]; then
+		token=`cat /proc/sys/kernel/random/uuid | cut -d '-' -f 1`
+		echo $token > $DEVICE_TOKEN
+	else
+		token=`cat $DEVICE_TOKEN`
+		if [ x$token == x ] ;then
+			token=`cat /proc/sys/kernel/random/uuid | cut -d '-' -f 1`
+			echo $token > $DEVICE_TOKEN
+		fi
+	fi	
+	uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].token=$token
+	
+	zonename=`uci get system.@system[-1].zonename`
+	if [ x$zonename != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].zonename=$zonename
+	fi
+	
+	fw_ver=`cat /etc/openwrt_version`
+	if [ x$fw_ver != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].fw_ver=$fw_ver
+	fi
+	
+	uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].model=${MODEL}
+	uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_addr=${SRV_ADDR}
+	uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_ver=${SRV_VER}
+	
+	if [ x$MODEL != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].model=${MODEL}
+	fi
+	cloud_model=`fw_printenv -n cloud_model`
+	if [ x$cloud_model != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].model=${cloud_model}
+	fi
+	
+	if [ x$SRV_ADDR != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_addr=${SRV_ADDR}
+	fi
+	http_server=`fw_printenv -n http_server`
+	if [ x$http_server != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_addr=${http_server}
+	fi
+	
+	if [ x$SRV_VER != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_ver=${SRV_VER}
+	fi
+	http_version=`fw_printenv -n http_version`
+	if [ x$http_version != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].srv_ver=${http_version}
+	fi
+	
+	uci commit
+	
+	cert read 0 $KEY_FILE
+	cert read 1 $CERT_FILE
+}
+
+boot() 
+{
+	bootstrap
+	
+	start "$@"
+}
+
+start_service()
+{
+	fw_ver=`cat /etc/openwrt_version`
+	if [ x$fw_ver != x ] ;then
+		uci set ${VERSION_NAME}.@${VERSION_NAME}[-1].fw_ver=$fw_ver
+	fi
+	
+	[ -f $CONF ] && rm -f $CONF
+	config_load ${VERSION_NAME}                      
+	config_foreach parseconfig ${VERSION_NAME}   
+	
+	procd_open_instance
+	procd_set_param command "$PROG" -c $CONF
+	procd_set_param respawn 3600 5 5
+	procd_close_instance
+}
+
+service_triggers()
+{
+	procd_add_reload_trigger "lagent"
+}
+
+reload_service()
+{
+	stop
+	start
+}
