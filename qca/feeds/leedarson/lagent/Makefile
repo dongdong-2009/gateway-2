@@ -31,6 +31,10 @@ define Package/lagent
 	DEPENDS:=+libopenssl +libjson-c +libsqlite3 +libubox +libubus +libblobmsg-json +libmosquitto +libuuid +libustream-openssl +libuci +libcurl
 endef
 
+define Package/$(PKG_NAME)/config
+	source "$(SOURCE)/Config.in"
+endef
+
 define Package/lagent/description
 	Device agent is a program running on device to execute user demand. Moreover, it can
 parse and execute pre-set smart home commands in right time right place. Device agent will
@@ -40,6 +44,10 @@ endef
 define Package/lagent/conffiles
 /etc/config/lagent
 endef
+
+ifeq ($(CONFIG_LAGENT_CABLE),y)
+	TARGET_CFLAGS += -DWITH_CABLE
+endif
 
 define Package/lagent/install
 	$(INSTALL_DIR) $(1)/usr/bin

@@ -1,0 +1,6 @@
+config LAGENT_CABLE
+    bool "cable support"
+    depends on PACKAGE_lagent
+    default n
+    help
+        The device allows connecting the cloud via cable internet port.  
