@@ -41,27 +41,32 @@ define Package/$(PKG_NAME)
 	DEPENDS:=+libjson-c +libsqlite3 +libuci +libubox +libubus +libblobmsg-json +libmosquitto +libpthread +librt +libopenssl +libuuid +zware
 endef
 
-define Package/$(PKG_NAME)/config
-	source "$(SOURCE)/Config.in"
-endef
+#define Package/$(PKG_NAME)/config
+	#source "$(SOURCE)/Config.in"
+#endef
 
 define Package/$(PKG_NAME)/description
 	subdevice management daemon
 endef
 
-ifeq ($(CONFIG_SUBDEVICE_ZWAVE_ENABLE),y)
-	TARGET_CFLAGS += -DZWAVE_ENABLE 
-endif
+#ifeq ($(CONFIG_SUBDEVICE_ZWAVE_ENABLE),y)
+	#TARGET_CFLAGS += -DZWAVE_ENABLE 
+#endif
 
-ifeq ($(CONFIG_SUBDEVICE_BRANCH_A023),y)
+ifeq ($(CONFIG_TARGET_ar71xx_generic_LDS_G151),y)
 	TARGET_CFLAGS += -DZIGBEE_BRANCH_A023 
 endif
 
-ifeq ($(CONFIG_SUBDEVICE_BRANCH_MULTIPLE),y)
-	TARGET_CFLAGS += -DZIGBEE_BRANCH_MULTIPLE 
+ifeq ($(CONFIG_TARGET_ar71xx_generic_LDS_G152),y)
+	TARGET_CFLAGS += -DZIGBEE_BRANCH_A023 
 endif
 
-ifeq ($(CONFIG_SUBDEVICE_BRANCH_EDU),y)
+ifeq ($(CONFIG_TARGET_ar71xx_generic_LDS_G402),y)
+	TARGET_CFLAGS += -DZIGBEE_BRANCH_MULTIPLE 
+	TARGET_CFLAGS += -DZWAVE_ENABLE
+endif
+
+ifeq ($(CONFIG_TARGET_ar71xx_generic_LDS_G104),y)
 	TARGET_CFLAGS += -DZIGBEE_BRANCH_EDU 
 endif
 

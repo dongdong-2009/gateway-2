@@ -1,0 +1,32 @@
+#Ota model id configuration
+
+choice
+	prompt "Device Model ID Select"
+	default OTA_A023_ENABLE
+	
+	config OTA_G151_ENABLE
+		depends on PACKAGE_ota
+		bool "LDS-G151 (The Home Depot - A023)"
+		help 
+			use a023 model a023.Siren_Hub.g151
+
+	config OTA_G152_ENABLE
+		depends on PACKAGE_ota
+		bool "LDS-G152 (Own Siren Hub)"
+		help 
+			use a023 model a023.Siren_Hub.g151
+		
+	config OTA_G104_ENABLE
+		depends on PACKAGE_ota
+		bool "LDS-G104 (Education Gateway)"
+		help 
+			use edu model lds.gateway.g104
+
+	config OTA_G402_ENABLE
+		depends on PACKAGE_ota
+		bool "LDS-G402 (Own Multi Protocol Gateway)"
+		help 
+			use edu model lds.gateway.g104	
+endchoice
+
+
