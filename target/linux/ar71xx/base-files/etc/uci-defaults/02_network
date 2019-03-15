@@ -468,6 +468,8 @@ lds-g104)
 	ucidef_set_sys_mode
 	ucidef_set_static_route_broadcast
 	ucidef_set_static_route_multicast
+	uci -q set network.wan.dns='8.8.8.8'
+	uci -q set network.wwan.dns='8.8.8.8'
 	;;
 
 lds-g402)
@@ -481,6 +483,8 @@ lds-g402)
 	ucidef_set_sys_mode
 	ucidef_set_static_route_broadcast
 	ucidef_set_static_route_multicast
+	uci -q set network.wan.dns='8.8.8.8'
+	uci -q set network.wwan.dns='8.8.8.8'
 	;;
 
 lds-g151)
@@ -492,6 +496,8 @@ lds-g151)
 	ucidef_add_switch_vlan "switch0" "1" "0 1 2 3 4"
 	ucidef_set_interface_wwan "wwan"
 	ucidef_set_sys_mode
+	uci -q set network.wan.dns='8.8.8.8'
+	uci -q set network.wwan.dns='8.8.8.8'
 	;;
 
 lds-g152)
@@ -503,6 +509,8 @@ lds-g152)
 	ucidef_add_switch_vlan "switch0" "1" "0 1 2 3 4"
 	ucidef_set_interface_wwan "wwan"
 	ucidef_set_sys_mode
+	uci -q set network.wan.dns='8.8.8.8'
+	uci -q set network.wwan.dns='8.8.8.8'
 	;;
 
 wzr-hp-g450h)
