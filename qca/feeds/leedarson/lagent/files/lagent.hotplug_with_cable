@@ -1,0 +1,45 @@
+#!/bin/sh
+
+## switch network between wlan0-1 and eth0
+
+MODE=`fw_printenv mode | cut -d '=' -f 2`
+[ $MODE == ldsGateTestMode ] && exit 0
+
+AP_SWITCH=`uci get wireless.@wifi-iface[0].disabled`
+con=`ifconfig eth0`
+dateTime="`date`"  
+
+##wlan0-1
+gw_wwan=`ubus call network.interface.wwan status | grep nexthop | grep -oE '[1-9]{1}[0-9]{0,2}.([0-9]{1,3}.){2}[0-9]{1,3}'`
+
+##eth0
+gw_wan=`ubus call network.interface.wan status | grep nexthop | grep -oE '[1-9]{1}[0-9]{0,2}.([0-9]{1,3}.){2}[0-9]{1,3}'`
+
+config=`echo $con | grep "RUNNING"`	
+if [ $? -eq 0 ] ;then 
+
+	echo "$dateTime : wire is pluged" >> /tmp/wirelog.txt
+
+	echo "gw $gw_wan switch eth0" >> /tmp/wirelog.txt
+	route delete default gw $gw_wan dev eth0
+	route add default gw $gw_wan dev eth0
+	/bin/ledsaction.sh wire eth0&
+	route delete default gw $gw_wwan dev wlan0-1
+
+	if [ $AP_SWITCH -eq 0 ]; then
+		uci set wireless.@wifi-iface[0].disabled=1
+		uci commit
+		wifi up
+	fi
+else
+	echo "$dateTime : wire is unpluged" >> /tmp/wirelog.txt
+
+	route add default gw $gw_wwan dev wlan0-1
+	if [ $? -eq 0 ] ; then
+		echo "gw $gw_wwan switch wlan0-1" >> /tmp/wirelog.txt
+		/bin/ledsaction.sh sta wlan0-1&
+	fi
+fi
+
+
+

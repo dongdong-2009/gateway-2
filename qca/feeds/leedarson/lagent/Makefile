@@ -58,11 +58,18 @@ define Package/lagent/install
 	$(INSTALL_CONF) ./files/lagent.config $(1)/etc/config/lagent
 	$(INSTALL_DIR) $(1)/etc/lagent
 	$(INSTALL_CONF) ./files/rootCA*.crt $(1)/etc/lagent/
-	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
-	$(INSTALL_DATA) ./files/lagent.hotplug $(1)/etc/hotplug.d/iface/26-lagent
 	$(INSTALL_DIR) $(1)/usr/libexec/rpcd
 	$(INSTALL_BIN) ./files/lagent.helper $(1)/usr/libexec/rpcd/lagent.helper
 	$(STAGING_DIR_HOST)/bin/c_rehash  $(1)/etc/lagent/
+
+ifeq ($(CONFIG_LAGENT_CABLE),y)
+	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
+	$(INSTALL_DATA) ./files/lagent.hotplug_with_cable $(1)/etc/hotplug.d/iface/26-lagent
+else
+	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
+	$(INSTALL_DATA) ./files/lagent.hotplug $(1)/etc/hotplug.d/iface/26-lagent
+endif
+
 endef
 
 $(eval $(call BuildPackage,lagent))
